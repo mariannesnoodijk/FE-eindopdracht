@@ -1,0 +1,58 @@
+/*In dit bestand plaats je alle algemene styling die geldt voor de gehele applicatie*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+
+/* CSS RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GLOBAL SETUP */
+:root {
+  --main-color-light: #F5F5F5;
+  --main-color-white: #FFFFFF;
+  --main-color-medium: #D5CCBB;
+  --main-color-dark: #2E2E2E;
+}
+
+body {
+  font-family: 'PT Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--main-color-light);
+  color: var(--main-color-white);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 3.4em;
+  line-height: 1.1;
+  margin-block: 1em;
+}
+
+a,
+a:visited {
+  color: white;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #3624FF;
+}
