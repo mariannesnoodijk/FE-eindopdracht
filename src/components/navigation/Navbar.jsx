@@ -37,7 +37,7 @@ function Navbar() {
         <>
             <nav className='navbar'>
                 <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                    {/*<img src={logo} alt=""/>*/}
+                    <img src={logo} alt="Company logo"/>
                 </Link>
                 <div className='menu-icon' onClick={handleClick}>
                     {click ? <CloseIcon/> : <MenuIcon/>}

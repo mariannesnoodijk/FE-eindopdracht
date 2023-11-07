@@ -15,6 +15,7 @@ import headerImageAmsterdam from './assets/headerImageAmsterdam.jpg';
 import Footer from "./components/footer/Footer.jsx";
 import Navbar from "./components/navigation/Navbar.jsx";
 import Appointments from "./pages/appointments/Appointments.jsx";
+import AddingOfProperty from "./pages/properties/AddingOfProperty.jsx";
 
 
 
@@ -31,6 +32,7 @@ function App() {
                   <Route path="/" element={<Homepage/>}/>
                   <Route path="/about" element={<AboutPage/>}/>
                   <Route path="/properties" element={<PropertiesOverview/>}/>
+                  <Route path="/properties1" element={<AddingOfProperty/>}/>
                   <Route path="/contact" element={<Contact/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/accounts" element={<Register/>}/>

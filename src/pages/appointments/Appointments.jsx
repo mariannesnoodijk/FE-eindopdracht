@@ -2,6 +2,7 @@ import {useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import Input from "../../components/input/Input.jsx";
+import Button from "../../components/button/Button.jsx";
 
 export default function Appointments() {
     const [formState, setFormState] = useState({
@@ -95,7 +96,7 @@ export default function Appointments() {
                                 handleChange={handleChange}
                             />
 
-                            <button type="submit" className="form-button">SEND</button>
+                            <Button type="submit" variant="primary">send</Button>
                             {error && <p>Er is iets misgegaan bij het inloggen. Probeer het opnieuw</p>}
                         </form>
                         : <p>Het maken van je afspraak is gelukt. Je account informatie is <Link
