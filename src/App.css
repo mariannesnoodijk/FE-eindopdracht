@@ -52,15 +52,15 @@ It is allowed to shrink if screen is less wide, but not grow when more space*/
 /*  color: white;*/
 /*}*/
 
-/*a,*/
-/*a:visited {*/
-/*  color: white;*/
-/*  font-weight: bold;*/
-/*}*/
+a,
+a:visited {
+  color: white;
+  font-weight: bold;
+}
 
-/*a:hover {*/
-/*  color: #3624FF;*/
-/*}*/
+a:hover {
+  color: white;
+}
 
 
 

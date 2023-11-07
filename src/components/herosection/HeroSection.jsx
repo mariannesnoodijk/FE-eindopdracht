@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import './HeroSection.css';
+import Button from "../button/Button.jsx";
 
 
 function HeroSection() {
@@ -9,12 +10,9 @@ function HeroSection() {
             <div className="hero-container">
                 <h1> FIND YOUR DREAM HOME </h1>
                 <p> What are you waiting for? </p>
-                <div className="hero-btns">
+                <div>
                     <Link to="/matching">
-                        <button className='hero-btn'
-                        >
-                            MATCH ME
-                        </button>
+                        <Button type="submit" variant="primary">match me</Button>
                     </Link>
                 </div>
             </div>

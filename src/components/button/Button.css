@@ -1,12 +1,32 @@
-form button {
-    margin-top: 40px;
-    width: 140px;
-    height: 40px;
+/*form button {*/
+/*    margin-top: 40px;*/
+/*    width: 140px;*/
+/*    height: 40px;*/
+/*    border: none;*/
+/*    background-color: var(--main-color-dark);*/
+/*    border-radius: 20px;*/
+/*    color: whitesmoke;*/
+/*    font-size: 15px;*/
+/*    cursor: pointer;*/
+/*    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;*/
+/*}*/
+
+.button {
     border: none;
-    background-color: var(--main-color-dark);
+    /*font-weight: 600;*/
+    font-weight: lighter;
+    padding: 12px;
     border-radius: 20px;
-    color: whitesmoke;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.button-primary {
+    background-color: var(--main-color-dark);
+    color: var(--main-color-light);
+    display: inline;
+    text-transform: uppercase;
+}
+
+.button-invisible {
+    background-color: transparent;
+    max-width: 200px;
 }

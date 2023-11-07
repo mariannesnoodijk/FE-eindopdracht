@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function CardItem({ path, label, src, text }) {
+function PropertyCard({ path, label, src, text }) {
     return (
         <>
             <li className="cards__item">
@@ -22,7 +22,7 @@ function CardItem({ path, label, src, text }) {
     );
 }
 
-export default CardItem;
+export default PropertyCard;
 
 
 

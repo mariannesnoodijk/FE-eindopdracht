@@ -3,6 +3,7 @@ import {useState} from "react";
 import axios from "axios";
 import Input from '../../components/input/Input.jsx';
 import {Link} from "react-router-dom";
+import Button from "../../components/button/Button.jsx";
 
 export default function Register() {
     const [formState, setFormState] = useState({
@@ -106,7 +107,7 @@ export default function Register() {
                                 handleChange={handleChange}
                             />
 
-                            <button type="submit" className="form-button">REGISTER</button>
+                            <Button type="submit" variant="primary">register</Button>
                             {error && <p>Something went wrong with your registration. Please try again.</p>}
                         </form>
                         : <p>Your registration was successful. Your account information can be found <Link to={`/accounts/${submitSuccessId}`}>here</Link>.</p>}

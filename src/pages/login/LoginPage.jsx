@@ -3,6 +3,7 @@ import {useState} from "react";
 import axios from "axios";
 import Input from '../../components/input/Input.jsx';
 import {Link} from "react-router-dom";
+import Button from "../../components/button/Button.jsx";
 
 export default function Login() {
     const [formState, setFormState] = useState({
@@ -47,12 +48,10 @@ export default function Login() {
                 <div className="inner-content-container__text-restriction">
                     <div className="general-form-top">
                         <Link to='/'>Bring me back home</Link>
-                        {/*<h2>Nice to see you again</h2>*/}
                         <h1>Login</h1>
                     </div>
 
                     {!submitSuccessId ?
-                        // <form className="new-post-form" onSubmit={handleSubmit}>
                         <form className="general-form" onSubmit={handleSubmit}>
                             <h1>welcome back</h1>
                             <Input
@@ -72,12 +71,11 @@ export default function Login() {
                                 handleChange={handleChange}
                             />
 
-                            <button type="submit" className="form-button">LOGIN</button>
+                            <Button type="submit" variant="primary">login</Button>
                             {error && <p>Something went wrong with your login. Please try again.</p>}
                         </form>
                         : <p>Your login was successful.</p>}
                     </div>
-                {/*</div>*/}
             </section>
         </>
     );
