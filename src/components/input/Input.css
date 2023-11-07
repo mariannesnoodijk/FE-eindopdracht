@@ -1,12 +1,37 @@
-.login-form label {
-    text-align: left;
-    font-size: 14px;
-    color: var(--main-color-dark);
-    text-transform: uppercase;
+/*.login-form label {*/
+/*    text-align: left;*/
+/*    font-size: 14px;*/
+/*    color: var(--main-color-dark);*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+/*.login-form input,*/
+/*.login-form textarea {*/
+/*    padding: 12px;*/
+/*    margin: 4px 0 12px 0;*/
+/*    border-radius: 6px;*/
+/*    border: 1px solid #D1D3DB;*/
+/*    background-color: var(--main-color-light);*/
+/*}*/
+.general-form {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    color: var(--main-color-medium);
 }
 
-.login-form input,
-.login-form textarea {
+.general-form-top {
+    background-color: var(--main-color-medium);
+}
+
+.general-form label {
+    text-align: left;
+    font-size: 14px;
+    color: #595F73;
+}
+
+.general-form input,
+.general-form textarea {
     padding: 12px;
     margin: 4px 0 12px 0;
     border-radius: 6px;

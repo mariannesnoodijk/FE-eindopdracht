@@ -10,6 +10,7 @@ export default function Register() {
         lastname: '',
         phonenumber: '',
         emailaddress: '',
+        role: '',
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
     const [error, toggleError] = useState(false)
@@ -35,7 +36,7 @@ export default function Register() {
             });
             console.log(response.data);
 
-            console.log('Je bent successvol geregistreerd als nieuwe gebruiker.');
+            console.log('You are successfully registered as a new user.');
             setSubmitSuccessId(response.data.id);
         } catch (e) {
             console.error(e);
@@ -45,16 +46,17 @@ export default function Register() {
 
     return (
         <>
-            <div className="outer-content-container">
-                <section className="inner-content-container__text-restriction">
-                    <div className="register-top">
-                        <h2>Hello first time visitor</h2>
-                        <h1>Welcome</h1>
+            <section className="new-general-form-section outer-content-container">
+                <div className="inner-content-container__text-restriction">
+                    <div className="general-form-top">
+                        <Link to='/'>Bring me back home</Link>
+                        {/*<h2>Hello first time visitor</h2>*/}
+                        <h1>Register</h1>
                     </div>
 
                     {!submitSuccessId ?
-                        <form className="register-form" onSubmit={handleSubmit}>
-                            <h1>register</h1>
+                        <form className="general-form" onSubmit={handleSubmit}>
+                            <h1>welcome</h1>
                             <Input
                                 type="text"
                                 name="firstname"
@@ -87,37 +89,29 @@ export default function Register() {
                                 formStateValue={formState.emailaddress}
                                 handleChange={handleChange}
                             />
+                            <Input
+                                type="radio"
+                                name="role"
+                                labelText="admin"
+                                required={true}
+                                formStateValue={formState.role}
+                                handleChange={handleChange}
+                            />
+                            <Input
+                                type="radio"
+                                name="role"
+                                labelText="user"
+                                required={true}
+                                formStateValue={formState.role}
+                                handleChange={handleChange}
+                            />
 
-                            <button type="submit" className="form-button">LOGIN</button>
-                            {error && <p>Er is iets misgegaan bij het inloggen. Probeer het opnieuw</p>}
+                            <button type="submit" className="form-button">REGISTER</button>
+                            {error && <p>Something went wrong with your registration. Please try again.</p>}
                         </form>
-                        : <p>Het inloggen is gelukt. Je account informatie is <Link to={`/accounts/${submitSuccessId}`}>hier</Link> te vinden</p>}
-                </section>
+                        : <p>Your registration was successful. Your account information can be found <Link to={`/accounts/${submitSuccessId}`}>here</Link>.</p>}
             </div>
-
-
-            {/*<div className="register-wrapper">*/}
-            {/*    <div className="register-leftSide">*/}
-            {/*        <h2>Hi, nice to see you</h2>*/}
-            {/*        <h1>Welcome</h1>*/}
-            {/*    </div>*/}
-
-            {/*    <div className="register-rightSide">*/}
-            {/*        <form className="register" onSubmit={handleSubmit}>*/}
-            {/*            <h1>Register</h1>*/}
-            {/*            <label htmlFor="form-email">EMAIL</label>*/}
-            {/*            <input*/}
-            {/*                type="email"*/}
-            {/*                id="form-email"*/}
-            {/*                name="email"*/}
-            {/*                placeholder="ENTER YOUR EMAIL ADDRESS HERE"*/}
-            {/*                value={formState.email}*/}
-            {/*                onChange={handleChange}*/}
-            {/*            />*/}
-            {/*            <button type="submit" className="form-button">REGISTER</button>*/}
-            {/*        </form>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+                </section>
         </>
     );
 }

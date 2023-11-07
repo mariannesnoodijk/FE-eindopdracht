@@ -68,7 +68,7 @@ function Navbar() {
                     {/*</li>*/}
                     {/*<li className='nav-item'>*/}
                     {/*    <NavLink*/}
-                    {/*        to='/listings'*/}
+                    {/*        to='/properties'*/}
                     {/*        className={({isActive}) => isActive ? 'nav-links' : 'default'}*/}
                     {/*        onClick={closeMobileMenu}*/}
                     {/*    >*/}

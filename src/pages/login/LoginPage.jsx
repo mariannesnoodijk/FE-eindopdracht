@@ -33,7 +33,7 @@ export default function Login() {
             });
             console.log(response.data);
 
-            console.log('Je bent successvol ingelogd.');
+            console.log('You are successfully logged in.');
             setSubmitSuccessId(response.data.id);
         } catch (e) {
             console.error(e);
@@ -43,16 +43,18 @@ export default function Login() {
 
     return (
         <>
-            <div className="outer-content-container">
-                <section className="inner-content-container__text-restriction">
-                    <div className="login-top">
-                        <h2>Nice to see you again</h2>
-                        <h1>Welcome back</h1>
+            <section className="new-general-form-section outer-content-container">
+                <div className="inner-content-container__text-restriction">
+                    <div className="general-form-top">
+                        <Link to='/'>Bring me back home</Link>
+                        {/*<h2>Nice to see you again</h2>*/}
+                        <h1>Login</h1>
                     </div>
 
                     {!submitSuccessId ?
-                        <form className="login-form" onSubmit={handleSubmit}>
-                            <h1>login</h1>
+                        // <form className="new-post-form" onSubmit={handleSubmit}>
+                        <form className="general-form" onSubmit={handleSubmit}>
+                            <h1>welcome back</h1>
                             <Input
                                 type="email"
                                 name="email"
@@ -71,12 +73,12 @@ export default function Login() {
                             />
 
                             <button type="submit" className="form-button">LOGIN</button>
-                            {error && <p>Er is iets misgegaan bij het inloggen. Probeer het opnieuw</p>}
+                            {error && <p>Something went wrong with your login. Please try again.</p>}
                         </form>
-                        : <p>Het inloggen is gelukt. Je account informatie is <Link
-                            to={`/accounts/${submitSuccessId}`}>hier</Link> te vinden</p>}
-                </section>
-            </div>
+                        : <p>Your login was successful.</p>}
+                    </div>
+                {/*</div>*/}
+            </section>
         </>
     );
 }

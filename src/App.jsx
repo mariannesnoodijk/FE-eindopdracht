@@ -5,7 +5,7 @@ import Navigation from "./components/navigation/Navigation.jsx";
 import Homepage from "./pages/home/Homepage.jsx";
 import NotFound from "./pages/error/NotFound.jsx";
 import AboutPage from "./pages/about/AboutPage.jsx";
-import ListingsOverview from "./pages/listings/ListingsOverview.jsx";
+import PropertiesOverview from "./pages/properties/PropertiesOverview.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Login from "./pages/login/LoginPage.jsx";
 import Register from "./pages/register/RegisterPage.jsx";
@@ -14,6 +14,7 @@ import Favorites from "./pages/favorites/Favorites.jsx";
 import headerImageAmsterdam from './assets/headerImageAmsterdam.jpg';
 import Footer from "./components/footer/Footer.jsx";
 import Navbar from "./components/navigation/Navbar.jsx";
+import Appointments from "./pages/appointments/Appointments.jsx";
 
 
 
@@ -29,10 +30,11 @@ function App() {
               <Routes>
                   <Route path="/" element={<Homepage/>}/>
                   <Route path="/about" element={<AboutPage/>}/>
-                  <Route path="/listings" element={<ListingsOverview/>}/>
+                  <Route path="/properties" element={<PropertiesOverview/>}/>
                   <Route path="/contact" element={<Contact/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/accounts" element={<Register/>}/>
+                  <Route path="/viewings" element={<Appointments/>}/>
                   <Route path="/favorites" element={<Favorites/>}/>
                   <Route path="*" element={<NotFound/>}/>
               </Routes>
