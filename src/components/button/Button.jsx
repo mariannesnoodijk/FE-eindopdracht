@@ -6,14 +6,9 @@ import {Link} from 'react-router-dom';
 // const SIZES = ['btn--medium', 'btn--large'];
 
 export default function Button({ children, type, onClick, disabled = false, variant }) {
-    // const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0]
-
-    // const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
     return (
-        // <Link to='./sign-up' className='btn-mobile'>
             <button
-                // className={`btn ${checkButtonStyle} ${checkButtonSize}`}
                 className={variant === 'primary' ? 'button button-primary' : 'button button-invisible'}
                 onClick={onClick}
                 type={type}
@@ -21,6 +16,5 @@ export default function Button({ children, type, onClick, disabled = false, vari
                 >
                 {children}
             </button>
-        // </Link>
     )
-};
+}

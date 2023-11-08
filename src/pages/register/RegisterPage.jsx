@@ -1,7 +1,7 @@
 import './RegisterPage.css';
 import {useState} from "react";
 import axios from "axios";
-import Input from '../../components/input/Input.jsx';
+import Input from '../../components/forms input/Input.jsx';
 import {Link} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
 
@@ -12,6 +12,7 @@ export default function Register() {
         phonenumber: '',
         emailaddress: '',
         role: '',
+        // role: [], __> check wat in back staat!
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
     const [error, toggleError] = useState(false)
@@ -47,11 +48,10 @@ export default function Register() {
 
     return (
         <>
+            {console.log(formState)}
             <section className="new-general-form-section outer-content-container">
                 <div className="inner-content-container__text-restriction">
                     <div className="general-form-top">
-                        <Link to='/'>Bring me back home</Link>
-                        {/*<h2>Hello first time visitor</h2>*/}
                         <h1>Register</h1>
                     </div>
 
@@ -95,7 +95,7 @@ export default function Register() {
                                 name="role"
                                 labelText="admin"
                                 required={true}
-                                formStateValue={formState.role}
+                                formStateValue="Admin"
                                 handleChange={handleChange}
                             />
                             <Input
@@ -103,11 +103,15 @@ export default function Register() {
                                 name="role"
                                 labelText="user"
                                 required={true}
-                                formStateValue={formState.role}
+                                formStateValue="User"
                                 handleChange={handleChange}
                             />
 
                             <Button type="submit" variant="primary">register</Button>
+                            <div className="sub-message">
+                            <p>Do you already have an account with us? <Link to="/login">Try logging in</Link></p>
+                                <p><Link to='/'>Bring me back home</Link></p>
+                            </div>
                             {error && <p>Something went wrong with your registration. Please try again.</p>}
                         </form>
                         : <p>Your registration was successful. Your account information can be found <Link to={`/accounts/${submitSuccessId}`}>here</Link>.</p>}

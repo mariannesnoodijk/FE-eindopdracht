@@ -1,7 +1,7 @@
 import {useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import Input from "../../components/input/Input.jsx";
+import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
 
 
@@ -31,7 +31,7 @@ export default function AddingOfProperty() {
         });
 
         try {
-            const response = await axios.post('http://localhost:8080/properties', {
+            const response = await axios.post('http://localhost:8084/properties', {
                 ...formState
             });
             console.log(response.data);

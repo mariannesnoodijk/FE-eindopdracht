@@ -5,7 +5,7 @@
 /*    text-transform: uppercase;*/
 /*}*/
 
-/*.login-form input,*/
+/*.login-form forms input,*/
 /*.login-form textarea {*/
 /*    padding: 12px;*/
 /*    margin: 4px 0 12px 0;*/
@@ -24,6 +24,10 @@
 .general-form-top {
     background-color: var(--main-color-dark);
     color: var(--main-color-light);
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
 }
 
 .general-form label {

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import Input from "../../components/input/Input.jsx";
+import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
 
 export default function Appointments() {
@@ -31,7 +31,7 @@ export default function Appointments() {
         });
 
         try {
-            const response = await axios.post('http://localhost:8080/viewings', {
+            const response = await axios.post('http://localhost:8083/viewings', {
                 ...formState
             });
             console.log(response.data);

@@ -19,6 +19,7 @@
     "@mui/material": "^5.14.17",
     "@mui/styled-engine-sc": "^6.0.0-alpha.5",
     "@mui/x-date-pickers": "^6.18.0",
+    "@react-spring/web": "^9.5.5",
     "axios": "^1.5.1",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
@@ -26,6 +27,7 @@
     "react-datetime-picker": "^5.5.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
+    "react-tinder-card": "^1.6.4",
     "styled-components": "^6.1.0"
   },
   "devDependencies": {

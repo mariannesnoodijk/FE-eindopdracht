@@ -36,8 +36,8 @@ function Navbar() {
     return (
         <>
             <nav className='navbar'>
-                <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                    <img src={logo} alt="Company logo"/>
+                <Link to='/' onClick={closeMobileMenu}>
+                    <img className='navbar-logo' src={logo} alt="Company logo"/>
                 </Link>
                 <div className='menu-icon' onClick={handleClick}>
                     {click ? <CloseIcon/> : <MenuIcon/>}
@@ -53,11 +53,11 @@ function Navbar() {
                     </li>
                     <li className='nav-item'>
                         <Link
-                            to='/listings'
+                            to='/properties'
                             className='nav-links'
                             onClick={closeMobileMenu}
                         >
-                            Listings
+                            Properties
                         </Link>
                     {/*    <NavLink to='/'*/}
                     {/*             className={({isActive}) => isActive ? 'nav-links' : 'default'}*/}
@@ -68,7 +68,7 @@ function Navbar() {
                     {/*</li>*/}
                     {/*<li className='nav-item'>*/}
                     {/*    <NavLink*/}
-                    {/*        to='/properties'*/}
+                    {/*        to='/admin'*/}
                     {/*        className={({isActive}) => isActive ? 'nav-links' : 'default'}*/}
                     {/*        onClick={closeMobileMenu}*/}
                     {/*    >*/}

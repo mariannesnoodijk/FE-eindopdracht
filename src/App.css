@@ -36,6 +36,7 @@ It is allowed to shrink if screen is less wide, but not grow when more space*/
   padding: 100px 0;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-color-light);
 }
 
 /*#root {*/
@@ -62,7 +63,10 @@ a:hover {
   color: white;
 }
 
-
+.sub-message {
+  font-weight: lighter;
+  font-size: 10px;
+}
 
 
 /*----------------------------- HEADER -----------------------------*/

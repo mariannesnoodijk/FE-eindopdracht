@@ -1,11 +1,11 @@
 export const DropdownItems = [
     {
-        title: 'login',
+        title: 'Login',
         path: '/login',
         cName: 'dropdown-link'
     },
     {
-        title: 'register',
+        title: 'Register',
         path: '/accounts',
         cName: 'dropdown-link'
     }

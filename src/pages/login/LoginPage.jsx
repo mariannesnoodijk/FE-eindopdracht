@@ -1,17 +1,20 @@
 import './LoginPage.css';
 import {useState} from "react";
 import axios from "axios";
-import Input from '../../components/input/Input.jsx';
+import Input from '../../components/forms input/Input.jsx';
 import {Link} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
+import {useNavigate} from 'react-router-dom'
 
 export default function Login() {
     const [formState, setFormState] = useState({
-        email: '',
+        username: '',
         password: '',
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
     const [error, toggleError] = useState(false)
+
+    const navigate = useNavigate()
 
     function handleChange(e) {
         setFormState({
@@ -28,11 +31,15 @@ export default function Login() {
             ...formState
         });
 
+        navigate('/')
+
         try {
-            const response = await axios.post('http://localhost:8080/auth', {
+            const response = await axios.post('http://localhost:8084/auth', {
                 ...formState
             });
             console.log(response.data);
+            // navigate('/')
+
 
             console.log('You are successfully logged in.');
             setSubmitSuccessId(response.data.id);
@@ -47,7 +54,6 @@ export default function Login() {
             <section className="new-general-form-section outer-content-container">
                 <div className="inner-content-container__text-restriction">
                     <div className="general-form-top">
-                        <Link to='/'>Bring me back home</Link>
                         <h1>Login</h1>
                     </div>
 
@@ -55,11 +61,11 @@ export default function Login() {
                         <form className="general-form" onSubmit={handleSubmit}>
                             <h1>welcome back</h1>
                             <Input
-                                type="email"
-                                name="email"
-                                labelText="email"
+                                type="text"
+                                name="username"
+                                labelText="username"
                                 required={true}
-                                formStateValue={formState.email}
+                                formStateValue={formState.username}
                                 handleChange={handleChange}
                             />
                             <Input
@@ -72,6 +78,10 @@ export default function Login() {
                             />
 
                             <Button type="submit" variant="primary">login</Button>
+                            <div className="sub-message">
+                                <p>Are you new on this page? <Link to="/accounts">Register an account first</Link></p>
+                                <p><Link to='/'>Bring me back home</Link></p>
+                            </div>
                             {error && <p>Something went wrong with your login. Please try again.</p>}
                         </form>
                         : <p>Your login was successful.</p>}
