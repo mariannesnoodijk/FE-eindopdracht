@@ -15,7 +15,7 @@ import Footer from "./components/footer/Footer.jsx";
 import Navbar from "./components/navigation/Navbar.jsx";
 import Appointments from "./pages/appointments/Appointments.jsx";
 import AddingOfProperty from "./pages/admin/AddingOfProperty.jsx";
-import Properties from "./components/properties/Properties.jsx";
+import Properties from "./pages/properties/Properties.jsx";
 import AccountOverview from "./pages/account user overview/AccountOverview.jsx";
 import ListingMatching from "./pages/matching/ListingMatching.jsx";
 

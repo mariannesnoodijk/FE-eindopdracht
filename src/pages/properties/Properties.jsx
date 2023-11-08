@@ -7,9 +7,9 @@ import cardImage4 from '../../assets/amsterdamHouse2.jpg';
 import cardImage5 from '../../assets/amsterdamHouse2.jpg';
 import {Link} from "react-router-dom";
 import React, {useState} from "react";
-import Button from "../button/Button.jsx";
+import Button from "../../components/button/Button.jsx";
 import axios from "axios";
-import PropertyCard from "./PropertyCard.jsx";
+import PropertyCard from "../../components/propertycard/PropertyCard.jsx";
 
 
 function Properties() {

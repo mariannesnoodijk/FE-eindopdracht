@@ -2,7 +2,7 @@ import React from 'react';
 import './Homepage.css';
 import {Link} from "react-router-dom";
 import HeroSection from "../../components/herosection/HeroSection.jsx";
-import Properties from "../../components/properties/Properties.jsx";
+import Properties from "../properties/Properties.jsx";
 
 
 function Homepage() {
