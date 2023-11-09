@@ -5,6 +5,7 @@ import Input from '../../components/forms input/Input.jsx';
 import {Link} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
 import {useNavigate} from 'react-router-dom'
+import InteriorImage from "../../assets/interior.jpg";
 
 export default function Login() {
     const [formState, setFormState] = useState({
@@ -31,10 +32,8 @@ export default function Login() {
             ...formState
         });
 
-        navigate('/')
-
         try {
-            const response = await axios.post('http://localhost:8084/auth', {
+            const response = await axios.post('http://localhost:8080/auth', {
                 ...formState
             });
             console.log(response.data);
@@ -59,6 +58,7 @@ export default function Login() {
 
                     {!submitSuccessId ?
                         <form className="general-form" onSubmit={handleSubmit}>
+                            <img src={InteriorImage} alt="Image of the interior of a home"/>
                             <h1>welcome back</h1>
                             <Input
                                 type="text"

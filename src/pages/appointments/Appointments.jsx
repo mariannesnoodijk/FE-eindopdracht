@@ -3,6 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
+import InteriorImage from "../../assets/interior.jpg";
 
 export default function Appointments() {
     const [formState, setFormState] = useState({
@@ -55,6 +56,7 @@ export default function Appointments() {
 
                     {!submitSuccessId ?
                         <form className="general-form" onSubmit={handleSubmit}>
+                            <img src={InteriorImage} alt="Image of the interior of a home"/>
                             <Input
                                 type="text"
                                 name="fullname"
@@ -97,6 +99,9 @@ export default function Appointments() {
                             />
 
                             <Button type="submit" variant="primary">send</Button>
+                            <div className="sub-message">
+                            <p><Link to='/'>Bring me back home</Link></p>
+                            </div>
                             {error && <p>Er is iets misgegaan bij het inloggen. Probeer het opnieuw</p>}
                         </form>
                         : <p>Het maken van je afspraak is gelukt. Je account informatie is <Link

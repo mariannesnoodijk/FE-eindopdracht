@@ -14,7 +14,6 @@ function PropertyCard({ label, image, title, price, description }) {
                 <h2 className="propertycard-name">{title}</h2>
                 <h4>€{price},-</h4>
                 <p className="propertycard-description">{description}</p>
-                {/*<Link to=""*/}
                 <Button type="button" variant="primary">more info</Button>
             </article>
         );

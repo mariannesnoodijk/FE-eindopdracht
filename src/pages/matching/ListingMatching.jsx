@@ -23,7 +23,7 @@ import CloseIcon from '@mui/icons-material/Close';
 const db = [
     {
         name: 'Richard Hendricks',
-        url: 'https://unsplash.com/photos/a-person-swimming-in-the-ocean-near-a-cave-g6Me5mUQQIQ'
+        url: `https://unsplash.com/photos/a-person-swimming-in-the-ocean-near-a-cave-g6Me5mUQQIQ`
     },
     {
         name: 'Erlich Bachman',
@@ -126,15 +126,6 @@ function ListingMatching() {
                 <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
                 <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}><CheckIcon/></button>
             </div>
-            {/*{lastDirection ? (*/}
-            {/*    <h2 key={lastDirection} className='infoText'>*/}
-            {/*        You swiped {lastDirection}*/}
-            {/*    </h2>*/}
-            {/*) : (*/}
-            {/*    <h2 className='infoText'>*/}
-            {/*        Swipe a card or press a button to get Restore Card button visible!*/}
-            {/*    </h2>*/}
-            {/*)}*/}
         </div>
             </section>
            </>

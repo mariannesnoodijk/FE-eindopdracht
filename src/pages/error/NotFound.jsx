@@ -11,7 +11,7 @@ function NotFound() {
                 <h1>404</h1>
                 <h2>De pagina waar je naar zoekt bestaat niet</h2>
                 <span>
-                   <Button type="submit" variant="primary" onClick={() => navigate('/')}>bring me back home</Button>
+                   <Button type="button" variant="primary" onClick={() => navigate('/')}>bring me back home</Button>
                 </span>
             </div>
         </section>

@@ -2,8 +2,9 @@ import './RegisterPage.css';
 import {useState} from "react";
 import axios from "axios";
 import Input from '../../components/forms input/Input.jsx';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
+import InteriorImage from "../../assets/interior.jpg";
 
 export default function Register() {
     const [formState, setFormState] = useState({
@@ -16,6 +17,8 @@ export default function Register() {
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
     const [error, toggleError] = useState(false)
+
+    const navigate = useNavigate()
 
     function handleChange(e) {
         setFormState({
@@ -32,11 +35,14 @@ export default function Register() {
             ...formState
         });
 
+        navigate('/')
+
         try {
             const response = await axios.post('http://localhost:8080/auth', {
                 ...formState
             });
             console.log(response.data);
+            // navigate('/')
 
             console.log('You are successfully registered as a new user.');
             setSubmitSuccessId(response.data.id);
@@ -48,7 +54,6 @@ export default function Register() {
 
     return (
         <>
-            {console.log(formState)}
             <section className="new-general-form-section outer-content-container">
                 <div className="inner-content-container__text-restriction">
                     <div className="general-form-top">
@@ -57,6 +62,7 @@ export default function Register() {
 
                     {!submitSuccessId ?
                         <form className="general-form" onSubmit={handleSubmit}>
+                            <img src={InteriorImage} alt="Image of the interior of a home"/>
                             <h1>welcome</h1>
                             <Input
                                 type="text"
@@ -95,7 +101,7 @@ export default function Register() {
                                 name="role"
                                 labelText="admin"
                                 required={true}
-                                formStateValue="Admin"
+                                formStateValue="ADMIN"
                                 handleChange={handleChange}
                             />
                             <Input
@@ -103,7 +109,7 @@ export default function Register() {
                                 name="role"
                                 labelText="user"
                                 required={true}
-                                formStateValue="User"
+                                formStateValue="USER"
                                 handleChange={handleChange}
                             />
 
