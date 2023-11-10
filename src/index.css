@@ -64,12 +64,12 @@ p {
   margin-block: 0.5em;
 }
 
-/*a,*/
-/*a:visited {*/
-/*  color: var(--main-color-light);*/
-/*  text-decoration: none;*/
-/*  font-weight: bold;*/
-/*}*/
+a,
+a:visited {
+  color: var(--main-color-light);
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /*a:active {*/
 /*  color: purple;*/
