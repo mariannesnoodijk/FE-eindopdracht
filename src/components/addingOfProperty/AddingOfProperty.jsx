@@ -1,8 +1,8 @@
 import {useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import Input from "../../components/forms input/Input.jsx";
-import Button from "../../components/button/Button.jsx";
+import Input from "../forms input/Input.jsx";
+import Button from "../button/Button.jsx";
 
 
 export default function AddingOfProperty() {
@@ -50,7 +50,7 @@ export default function AddingOfProperty() {
                 <div className="inner-content-container__text-restriction">
                     <div className="general-form-top">
                         <Link to='/'>Bring me back home</Link>
-                        <h1>Login</h1>
+                        <h1>Hello Admin</h1>
                     </div>
 
                         {!submitSuccessId ?

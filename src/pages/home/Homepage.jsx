@@ -12,10 +12,10 @@ function Homepage() {
             <Properties/>
 
             {/*<main>*/}
-            {/*    <section className="homepage-admin-overview">*/}
-            {/*        <div className="homepage-admin-top-section">*/}
+            {/*    <section className="homepage-accountOverview-overview">*/}
+            {/*        <div className="homepage-accountOverview-top-section">*/}
             {/*            <p>POPULAR PROPERTIES</p>*/}
-            {/*            <button className="homepage-admin-btn">*/}
+            {/*            <button className="homepage-accountOverview-btn">*/}
             {/*                VIEW ALL*/}
             {/*            </button>*/}
             {/*        </div>*/}

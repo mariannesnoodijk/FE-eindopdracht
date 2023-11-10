@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {Link, NavLink} from 'react-router-dom';
 import './Navbar.css';
-import Dropdown from './Dropdown';
+import Dropdown from '../../helpers/Dropdown.jsx';
 import logo from "../../assets/favicon/PREMIUM CASAS.png";
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -68,7 +68,7 @@ function Navbar() {
                         {/*</li>*/}
                         {/*<li className='nav-item'>*/}
                         {/*    <NavLink*/}
-                        {/*        to='/admin'*/}
+                        {/*        to='/accountOverview'*/}
                         {/*        className={({isActive}) => isActive ? 'nav-links' : 'default'}*/}
                         {/*        onClick={closeMobileMenu}*/}
                         {/*    >*/}
@@ -185,7 +185,7 @@ export default Navbar;
 //                     {/*</li>*/}
 //                     {/*<li className='nav-item'>*/}
 //                     {/*    <NavLink*/}
-//                     {/*        to='/admin'*/}
+//                     {/*        to='/accountOverview'*/}
 //                     {/*        className={({isActive}) => isActive ? 'nav-links' : 'default'}*/}
 //                     {/*        onClick={closeMobileMenu}*/}
 //                     {/*    >*/}

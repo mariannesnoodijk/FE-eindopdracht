@@ -10,6 +10,8 @@ import React, {useEffect, useState} from "react";
 import Button from "../../components/button/Button.jsx";
 import axios from "axios";
 import PropertyCard from "../../components/propertycard/PropertyCard.jsx";
+import AddingOfProperty from "../../components/addingOfProperty/AddingOfProperty.jsx";
+import DeletingOfProperty from "../../components/deletingOfProperty/DeletingOfProperty.jsx";
 
 
 function Properties() {
@@ -82,6 +84,8 @@ function Properties() {
                 </div>
                 {loading && <p>Loading...</p>}
             </section>
+                <AddingOfProperty/>
+            <DeletingOfProperty/>
         </>
     );
 }
