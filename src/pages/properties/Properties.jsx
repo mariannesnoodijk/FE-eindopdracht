@@ -18,14 +18,25 @@ function Properties() {
     const [loading, toggleLoading] = useState(false);
     const navigate = useNavigate()
 
-    useEffect(() => {
-        fetchProperties();
-    }, []); // Fetch properties when the component mounts
 
     function handleClick() {
         console.log('Link clicked!');
         navigate('/properties')
     }
+
+    // const handleFavoriteToggle = async (propertyId, isFavorite) => {
+    //     try {
+    //         const response = await axios.patch(`http://localhost:8080/properties/${propertyId}/favorite`, isFavorite);
+    //         console.log(response.data); // Updated property object with favorite status
+    //         fetchProperties(); // Fetch updated properties after favorite status change
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // };
+
+    useEffect(() => {
+        fetchProperties()
+    }, []); // Fetch properties when the component mounts
 
     async function fetchProperties() {
         toggleError(false);
@@ -45,15 +56,6 @@ function Properties() {
         toggleLoading(false);
     }
 
-    const handleFavoriteToggle = async (propertyId, isFavorite) => {
-        try {
-            const response = await axios.patch(`http://localhost:8080/properties/${propertyId}/favorite`, isFavorite);
-            console.log(response.data); // Updated property object with favorite status
-            fetchProperties(); // Fetch updated properties after favorite status change
-        } catch (error) {
-            console.error(error);
-        }
-    };
 
     return (
         <>
@@ -78,6 +80,7 @@ function Properties() {
                     </main>
                     <Button type="button" onClick={handleClick} variant="primary">view all properties</Button>
                 </div>
+                {loading && <p>Loading...</p>}
             </section>
         </>
     );

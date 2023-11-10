@@ -110,12 +110,12 @@
         width: 80%;
         background: var(--main-color-medium);
         text-decoration: none;
-        color: #fff;
+        color: var(--main-color-white);
         font-size: 1.5rem;
     }
 
     .nav-links-mobile:hover {
-        background: #fff;
+        background: var(--main-color-white);
         color: var(--main-color-medium);
         transition: 250ms;
     }

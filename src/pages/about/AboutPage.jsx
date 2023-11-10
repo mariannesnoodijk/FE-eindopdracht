@@ -6,7 +6,17 @@ function AboutPage() {
     //     navigate('/about');
     // }
     return (
-        <h1>About us pagina</h1>
+        <>
+            <div className="top-section">
+                <p>
+                    
+                </p>
+                <span><img src="" alt=""/></span>
+            </div>
+            <div className="bottom-section">
+                
+            </div>
+        </>
     );
 }
 export default AboutPage;

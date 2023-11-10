@@ -1,8 +1,8 @@
-import './NotFound.css';
+import './PageNotFound.css';
 import {useNavigate} from 'react-router-dom';
 import Button from "../../components/button/Button.jsx";
 
-function NotFound() {
+function PageNotFound() {
     const navigate = useNavigate();
 
     return (
@@ -18,4 +18,4 @@ function NotFound() {
     );
 }
 
-export default NotFound;
+export default PageNotFound;

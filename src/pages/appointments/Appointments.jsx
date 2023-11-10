@@ -9,7 +9,7 @@ export default function Appointments() {
     const [formState, setFormState] = useState({
         fullname: '',
         phonenumber: '',
-        email: '',
+        emailaddress: '',
         date: '',
         time: '',
     });
@@ -32,7 +32,7 @@ export default function Appointments() {
         });
 
         try {
-            const response = await axios.post('http://localhost:8083/viewings', {
+            const response = await axios.post('http://localhost:8080/viewings', {
                 ...formState
             });
             console.log(response.data);
@@ -75,10 +75,10 @@ export default function Appointments() {
                             />
                             <Input
                                 type="email"
-                                name="email"
+                                name="emailaddress"
                                 labelText="Fill in your email address"
                                 required={true}
-                                formStateValue={formState.email}
+                                formStateValue={formState.emailaddress}
                                 handleChange={handleChange}
                             />
                             <Input
