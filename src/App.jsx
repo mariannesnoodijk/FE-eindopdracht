@@ -14,7 +14,7 @@ import Appointments from "./pages/appointments/Appointments.jsx";
 import AddingOfProperty from "./pages/admin/AddingOfProperty.jsx";
 import Properties from "./pages/properties/Properties.jsx";
 import AccountOverview from "./pages/account user overview/AccountOverview.jsx";
-import ListingMatching from "./pages/matching/ListingMatching.jsx";
+import PropertyMatching from "./pages/propertyMatching/PropertyMatching.jsx";
 import PropertyInfoPage from "./pages/properties/PropertyInfoPage.jsx";
 
 
@@ -32,7 +32,7 @@ function App() {
                   {/*TODO: PAS ONDERSTAANDE LINK CORRECT AAN AFHANKELIJK VAN JUISTE ENDPOINT*/}
                   <Route path="/properties1" element={<AddingOfProperty/>}/>
                   <Route path="/properties/:propertyId" element={<PropertyInfoPage/>}/>
-                  <Route path="/matching" element={<ListingMatching/>}/>
+                  <Route path="/matching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/accounts" element={<Register/>}/>
                   <Route path="/accounts/:accountId" element={<AccountOverview/>}/>

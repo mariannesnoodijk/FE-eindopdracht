@@ -11,7 +11,7 @@ const navigate = useNavigate()
 
 function handleClick() {
     console.log('Link clicked!');
-    navigate('/matching')
+    navigate('/propertyMatching')
 }
 
     return (

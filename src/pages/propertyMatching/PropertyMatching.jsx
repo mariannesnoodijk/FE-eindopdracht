@@ -1,6 +1,6 @@
-import './ListingMatching.css';
+import './PropertyMatching.css';
 
-// export default function ListingMatching() {
+// export default function PropertyMatching() {
 //     // const [error, toggleError] = useState();
 //     // const [formState, setFormState] = useState({
 //     //     email: '',
@@ -43,7 +43,7 @@ const db = [
     }
 ]
 
-function ListingMatching() {
+function PropertyMatching() {
     const [currentIndex, setCurrentIndex] = useState(db.length - 1)
     const [lastDirection, setLastDirection] = useState()
     // used for outOfFrame closure
@@ -132,4 +132,4 @@ function ListingMatching() {
     )
 }
 
-export default ListingMatching;
+export default PropertyMatching;
