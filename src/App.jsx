@@ -24,7 +24,6 @@ function App() {
 
   return (
       <>
-          <header>
               <Navbar/>
               <Routes>
                   <Route path="/" element={<Homepage/>}/>
@@ -43,7 +42,6 @@ function App() {
                   <Route path="*" element={<PageNotFound/>}/>
               </Routes>
               <Footer/>
-          </header>
       </>
   )
 }
