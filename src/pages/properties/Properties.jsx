@@ -66,20 +66,20 @@ function Properties() {
                     <div className="general-form-top">
                         <h1>property overview</h1>
                     </div>
-                    <main>
+                    <div className="property-container">
                         {properties.map((property) => {
                             return (
                                 <PropertyCard
                                     key={property.propertyId}
                                     // image={cardImage1}
-                                    label="New"
+                                    label="New in!"
                                     title={`${property.streetname} ${property.housenumber}`}
                                     price={property.price}
                                     description={property.description}
                                 />
                             )
                         })}
-                    </main>
+                    </div>
                     <Button type="button" onClick={handleClick} variant="primary">view all properties</Button>
                 </div>
                 {loading && <p>Loading...</p>}

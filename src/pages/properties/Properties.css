@@ -1,32 +1,7 @@
-article {
-    width: 100px;
-    position: relative;
-    text-align: center;
-    margin: 16px;
-}
-
-article span {
-    background-color: #BC4C2A;
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: white;
-    font-size: 8px;
-    padding: 4px;
-}
-
-article p {
-    font-size: 10px;
-}
-
-.cards {
-    padding: 4rem;
-    background: black;
-
-}
-
-main {
-    margin: 24px 0;
+.property-container {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 100px;
 }
