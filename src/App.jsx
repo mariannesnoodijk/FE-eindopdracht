@@ -33,7 +33,6 @@ function App() {
                   <Route path="/properties1" element={<AddingOfProperty/>}/>
                   <Route path="/properties/:propertyId" element={<PropertyInfoPage/>}/>
                   <Route path="/matching" element={<ListingMatching/>}/>
-                  <Route path="/contact" element={<Contact/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/accounts" element={<Register/>}/>
                   <Route path="/accounts/:accountId" element={<AccountOverview/>}/>
