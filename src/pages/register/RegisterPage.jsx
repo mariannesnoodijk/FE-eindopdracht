@@ -10,6 +10,8 @@ export default function Register() {
     const [formState, setFormState] = useState({
         firstname: '',
         lastname: '',
+        username: '',
+        password: '',
         phonenumber: '',
         emailaddress: '',
         role: '',
@@ -78,6 +80,22 @@ export default function Register() {
                                 labelText="last name"
                                 required={true}
                                 formStateValue={formState.lastname}
+                                handleChange={handleChange}
+                            />
+                            <Input
+                                type="text"
+                                name="username"
+                                labelText="username"
+                                required={true}
+                                formStateValue={formState.username}
+                                handleChange={handleChange}
+                            />
+                            <Input
+                                type="text"
+                                name="password"
+                                labelText="password"
+                                required={true}
+                                formStateValue={formState.password}
                                 handleChange={handleChange}
                             />
                             <Input
