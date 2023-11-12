@@ -12,7 +12,6 @@ export default function Register() {
         lastname: '',
         username: '',
         password: '',
-        phonenumber: '',
         emailaddress: '',
         role: '',
         // role: [], __> check wat in back staat!
@@ -99,14 +98,6 @@ export default function Register() {
                                 labelText="password"
                                 required={true}
                                 formStateValue={formState.password}
-                                handleChange={handleChange}
-                            />
-                            <Input
-                                type="text"
-                                name="phonenumber"
-                                labelText="phone number"
-                                required={true}
-                                formStateValue={formState.phonenumber}
                                 handleChange={handleChange}
                             />
                             <Input
