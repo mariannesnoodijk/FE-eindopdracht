@@ -5,7 +5,7 @@ import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
 import InteriorImage from "../../assets/interior.jpg";
 
-export default function Appointments() {
+export default function Viewings() {
     const [formState, setFormState] = useState({
         fullname: '',
         phonenumber: '',
