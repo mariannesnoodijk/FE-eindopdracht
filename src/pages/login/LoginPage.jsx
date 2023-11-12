@@ -1,19 +1,22 @@
 import './LoginPage.css';
-import {useState} from "react";
+import {useContext, useState} from "react";
 import axios from "axios";
 import Input from '../../components/forms input/Input.jsx';
 import {Link} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
 import {useNavigate} from 'react-router-dom'
 import InteriorImage from "../../assets/interior.jpg";
+import {AuthContext} from "../../context/AuthContext.jsx";
 
-export default function Login() {
+function Login() {
     const [formState, setFormState] = useState({
         username: '',
         password: '',
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
     const [error, toggleError] = useState(false)
+
+    const { login } = useContext(AuthContext);
 
     const navigate = useNavigate()
 
@@ -90,3 +93,5 @@ export default function Login() {
         </>
     );
 }
+
+export default Login;
