@@ -19,6 +19,7 @@ import React, {useMemo, useRef, useState} from 'react'
 import TinderCard from 'react-tinder-card'
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
+import {Link} from "react-router-dom";
 
 const db = [
     {
@@ -103,7 +104,7 @@ function PropertyMatching() {
                     <div className="general-form-top">
             <h1>Find your dream home</h1>
                     </div>
-            <div className='cardContainer'>
+            <div className="cardContainer">
                 {db.map((character, index) => (
                     <TinderCard
                         ref={childRefs[index]}
@@ -126,6 +127,9 @@ function PropertyMatching() {
                 <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
                 <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}><CheckIcon/></button>
             </div>
+                    <div className="sub-message">
+                        <p><Link to='/'>Bring me back home</Link></p>
+                    </div>
         </div>
             </section>
            </>
