@@ -29,26 +29,27 @@ function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        toggleError(false);
-
-        console.log({
-            ...formState
-        });
-
-        try {
-            const response = await axios.post('http://localhost:8080/auth', {
-                ...formState
-            });
-            console.log(response.data);
-            // navigate('/')
-
-
-            console.log('You are successfully logged in.');
-            setSubmitSuccessId(response.data.id);
-        } catch (e) {
-            console.error(e);
-            toggleError(true);
-        }
+        login();
+        // toggleError(false);
+        //
+        // console.log({
+        //     ...formState
+        // });
+        //
+        // try {
+        //     const response = await axios.post('http://localhost:8080/auth', {
+        //         ...formState
+        //     });
+        //     console.log(response.data);
+        //     // navigate('/')
+        //
+        //
+        //     console.log('You are successfully logged in.');
+        //     setSubmitSuccessId(response.data.id);
+        // } catch (e) {
+        //     console.error(e);
+        //     toggleError(true);
+        // }
     }
 
     return (
