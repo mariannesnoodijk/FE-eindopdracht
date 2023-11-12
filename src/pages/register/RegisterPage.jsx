@@ -64,7 +64,10 @@ export default function Register() {
 
                     {!submitSuccessId ?
                         <form className="general-form" onSubmit={handleSubmit}>
+                            {/*<div className="general-form-img">*/}
                             <img src={InteriorImage} alt="Image of the interior of a home"/>
+                            {/*</div>*/}
+                            {/*<div className="general-form-input">*/}
                             <h1>welcome</h1>
                             <Input
                                 type="text"
@@ -137,6 +140,7 @@ export default function Register() {
                                 <p><Link to='/'>Bring me back home</Link></p>
                             </div>
                             {error && <p>Something went wrong with your registration. Please try again.</p>}
+                            {/*</div>*/}
                         </form>
                         : <p>Your registration was successful. Your account information can be found <Link to={`/accounts/${submitSuccessId}`}>here</Link>.</p>}
             </div>
