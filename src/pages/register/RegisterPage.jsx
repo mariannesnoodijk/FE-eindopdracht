@@ -91,7 +91,7 @@ export default function Register() {
                                 handleChange={handleChange}
                             />
                             <Input
-                                type="text"
+                                type="password"
                                 name="password"
                                 labelText="password"
                                 required={true}
