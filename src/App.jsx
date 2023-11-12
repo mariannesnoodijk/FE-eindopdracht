@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 
 import Homepage from "./pages/home/Homepage.jsx";
 import PageNotFound from "./pages/error/PageNotFound.jsx";
@@ -35,6 +35,7 @@ function App() {
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/accounts" element={<Register/>}/>
                   <Route path="/accounts/:accountId" element={<AccountOverview/>}/>
+                  {/*<Route path="/accountoverview" element={isAuth ? <AccountOverview/> : <Navigate to="/"/>}/>*/}
                   <Route path="/viewings" element={<Viewings/>}/>
                   <Route path="/favorites" element={<Favorites/>}/>
                   <Route path="*" element={<PageNotFound/>}/>
