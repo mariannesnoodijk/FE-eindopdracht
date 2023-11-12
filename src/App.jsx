@@ -9,7 +9,7 @@ import Register from "./pages/register/RegisterPage.jsx";
 import Favorites from "./pages/favorites/Favorites.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import Navbar from "./components/navigation/Navbar.jsx";
-import Appointments from "./pages/appointments/Appointments.jsx";
+import Viewings from "./pages/viewings/Viewings.jsx";
 import AddingOfProperty from "./components/addingOfProperty/AddingOfProperty.jsx";
 import Properties from "./pages/properties/Properties.jsx";
 import AccountOverview from "./pages/accountOverview/AccountOverview.jsx";
@@ -29,13 +29,13 @@ function App() {
                   <Route path="/about" element={<AboutPage/>}/>
                   <Route path="/properties" element={<Properties/>}/>
                   {/*TODO: PAS ONDERSTAANDE LINK CORRECT AAN AFHANKELIJK VAN JUISTE ENDPOINT*/}
-                  <Route path="/adding_of_property" element={<AddingOfProperty/>}/>
+                  <Route path="/addingOfProperty" element={<AddingOfProperty/>}/>
                   <Route path="/properties/:propertyId" element={<PropertyInfoPage/>}/>
-                  <Route path="/matching" element={<PropertyMatching/>}/>
+                  <Route path="/propertyMatching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/accounts" element={<Register/>}/>
                   <Route path="/accounts/:accountId" element={<AccountOverview/>}/>
-                  <Route path="/viewings" element={<Appointments/>}/>
+                  <Route path="/viewings" element={<Viewings/>}/>
                   <Route path="/favorites" element={<Favorites/>}/>
                   <Route path="*" element={<PageNotFound/>}/>
               </Routes>
