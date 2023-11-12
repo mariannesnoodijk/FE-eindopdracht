@@ -36,14 +36,14 @@ export default function Register() {
             ...formState
         });
 
-        navigate('/')
+        navigate('/login')
 
         try {
-            const response = await axios.post('http://localhost:8080/auth', {
+            const response = await axios.post('http://localhost:8080/accounts', {
                 ...formState
             });
             console.log(response.data);
-            // navigate('/')
+            // navigate('/login')
 
             console.log('You are successfully registered as a new user.');
             setSubmitSuccessId(response.data.id);
