@@ -1,6 +1,7 @@
 import Button from "../button/Button.jsx";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 export default function DeletingOfProperty() {
