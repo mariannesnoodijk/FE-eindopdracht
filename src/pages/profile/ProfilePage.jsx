@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import Button from "../../components/button/Button.jsx";
 import axios from "axios";
+import {Link} from "react-router-dom";
+import AddingOfProperty from "../../components/addingOfProperty/AddingOfProperty.jsx";
+import DeletingOfProperty from "../../components/deletingOfProperty/DeletingOfProperty.jsx";
 
-function AccountOverview() {
+function ProfilePage() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const [account, setAccount] = useState([]);
@@ -26,6 +29,7 @@ function AccountOverview() {
         }
         toggleLoading(false)
     }
+
     async function deleteAccount() {
         console.log(formState)
         try {
@@ -42,17 +46,32 @@ function AccountOverview() {
             <div>
                 {account.map((account) => (
                     <>
-                        <h1 key={account.id}>Hello, {account.firstname}, here are your details:</h1>
-                        <p key={account.id}>First name: {account.firstname}</p>
-                        <p>Last name: {account.lastname}</p>
-                        <p>Email: {account.email}</p>
+                        <section>
+                            <h1>Profilepage</h1>
+                            <h2>Information</h2>
+                            <p><strong>Gebruikersnaam:</strong> hardcoded-test</p>
+                            <p><strong>Email:</strong> hardcoded@test.com</p>
+
+                            <h1 key={account.id}>Hello, {account.firstname}, here are your details:</h1>
+                            <p key={account.id}>First name: {account.firstname}</p>
+                            <p>Last name: {account.lastname}</p>
+                            <p>Email: {account.email}</p>
+                        </section>
+                        <section>
+                            <h2>Content visible after login</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor
+                                dolore fuga id molestias qui quo unde?</p>
+                        </section>
+                        <p>Back to <Link to="/">home</Link></p>
                     </>
                 ))}
             </div>
 
-                <Button type="button" onClick={deleteAccount} variant="primary">Delete account</Button>
+            <Button type="button" onClick={deleteAccount} variant="primary">Delete account</Button>
+            <AddingOfProperty/>
+            <DeletingOfProperty/>
         </>
     );
 }
 
-export default AccountOverview;
+export default ProfilePage;
