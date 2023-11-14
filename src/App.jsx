@@ -34,7 +34,8 @@ function App() {
                   <Route path="/propertyMatching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/accounts" element={<Register/>}/>
-                  <Route path="/accounts/:accountId" element={<AccountOverview/>}/>
+                  <Route path="/accountoverview" element={<AccountOverview/>}/>
+                  {/*<Route path="/accounts/:accountId" element={<AccountOverview/>}/>*/}
                   {/*<Route path="/accountoverview" element={isAuth ? <AccountOverview/> : <Navigate to="/"/>}/>*/}
                   <Route path="/viewings" element={<Viewings/>}/>
                   <Route path="/favorites" element={<Favorites/>}/>

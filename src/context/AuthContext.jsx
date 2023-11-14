@@ -16,7 +16,7 @@ function AuthContextProvider({children}) {
             isAuthenticated: true,
             user: {
                 emailaddress: '',
-                // TODO: welk id gebruik ik hieronder? zoals de back deze verwacht? en zoja, gebruik ik user of account?
+                // TODO: ik gebruik hieronder user id (dus username??)
                 id: '',
             },
         });

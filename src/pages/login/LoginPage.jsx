@@ -14,9 +14,10 @@ function Login() {
         password: '',
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
-    const [error, toggleError] = useState(false)
+    const [error, toggleError] = useState(false);
+    const [loading, toggleLoading] = useState(false);
 
-    const { login } = useContext(AuthContext);
+    const {login} = useContext(AuthContext);
 
     const navigate = useNavigate()
 
@@ -29,6 +30,16 @@ function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:8080/auth', {
+                ...formState
+            });
+            console.log(response.data.accessToken);
+        } catch (e) {
+            console.error(e)
+        }
+
         login();
         // toggleError(false);
         //
@@ -89,7 +100,7 @@ function Login() {
                             {error && <p>Something went wrong with your login. Please try again.</p>}
                         </form>
                         : <p>Your login was successful.</p>}
-                    </div>
+                </div>
             </section>
         </>
     );
