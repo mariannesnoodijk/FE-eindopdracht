@@ -1,18 +1,7 @@
-import './Properties.css';
-
-import cardImage1 from '../../assets/amsterdamHouse2.jpg';
-import cardImage2 from '../../assets/amsterdamHouse2.jpg';
-import cardImage3 from '../../assets/amsterdamHouse2.jpg';
-import cardImage4 from '../../assets/amsterdamHouse2.jpg';
-import cardImage5 from '../../assets/amsterdamHouse2.jpg';
-import {Link, useNavigate} from "react-router-dom";
+import "./Properties.css";
 import React, {useEffect, useState} from "react";
-import Button from "../../components/button/Button.jsx";
 import axios from "axios";
 import PropertyCard from "../../components/propertycard/PropertyCard.jsx";
-import AddingOfProperty from "../../components/addingOfProperty/AddingOfProperty.jsx";
-import DeletingOfProperty from "../../components/deletingOfProperty/DeletingOfProperty.jsx";
-import Input from "../../components/forms input/Input.jsx";
 
 
 function Properties() {
@@ -24,21 +13,14 @@ function Properties() {
         fetchProperties()
     }, []); // Fetch properties when the component mounts
 
-    const navigate = useNavigate()
-
-
-    function handleClick() {
-        console.log('Link clicked!');
-        navigate('/properties')
-    }
 
     // const handleFavoriteToggle = async (propertyId, isFavorite) => {
     //     try {
     //         const response = await axios.patch(`http://localhost:8080/properties/${propertyId}/favorite`, isFavorite);
     //         console.log(response.data); // Updated property object with favorite status
     //         fetchProperties(); // Fetch updated properties after favorite status change
-    //     } catch (error) {
-    //         console.error(error);
+    //     } catch (pageNotFound) {
+    //         console.pageNotFound(pageNotFound);
     //     }
     // };
 
@@ -75,9 +57,9 @@ function Properties() {
                             return (
                                 <PropertyCard
                                     key={property.propertyId}
-                                    // image={cardImage1}
+                                    // image={image1}
                                     label="New in!"
-                                    title={`${property.streetname} ${property.housenumber}`}
+                                    title={`${property.address}`}
                                     price={property.price}
                                     description={property.description}
                                 />

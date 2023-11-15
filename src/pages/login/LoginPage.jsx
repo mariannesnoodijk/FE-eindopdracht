@@ -1,11 +1,11 @@
-import './LoginPage.css';
+import "./LoginPage.css";
 import {useContext, useState} from "react";
 import axios from "axios";
-import Input from '../../components/forms input/Input.jsx';
+import Input from "../../components/forms input/Input.jsx";
 import {Link} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
-import {useNavigate} from 'react-router-dom'
-import InteriorImage from "../../assets/interior.jpg";
+import {useNavigate} from "react-router-dom"
+import InteriorImage from "../../assets/otherImages/interior.jpg";
 import {AuthContext} from "../../context/AuthContext.jsx";
 
 function LoginPage() {
@@ -15,7 +15,7 @@ function LoginPage() {
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
 //     const [loading, toggleLoading] = useState(false);
-//     const [error, toggleError] = useState(false);
+//     const [pageNotFound, toggleError] = useState(false);
 //     const {login} = useContext(AuthContext);
 //
 //     const navigate = useNavigate()
@@ -27,44 +27,6 @@ function LoginPage() {
         })
     }
 
-//
-//     async function handleSubmit(e) {
-//         e.preventDefault();
-//         toggleError(false);
-//
-//         try {
-//             const response = await axios.post('http://localhost:8080/auth', {
-//                 ...formState
-//             });
-//             console.log(response.data.accessToken);
-//         } catch (e) {
-//             console.error(e)
-//         }
-//
-//         login();
-// toggleError(false);
-//
-// console.log({
-//     ...formState
-// });
-//
-// try {
-//     const response = await axios.post('http://localhost:8080/auth', {
-//         ...formState
-//     });
-//     console.log(response.data);
-//     // navigate('/')
-//
-//
-//     console.log('You are successfully logged in.');
-//     setSubmitSuccessId(response.data.id);
-// } catch (e) {
-//     console.error(e);
-//     toggleError(true);
-// }
-// }
-
-// function Login() {
     const {login} = useContext(AuthContext);
 
     const navigate = useNavigate();
@@ -78,7 +40,7 @@ function LoginPage() {
                 password: formState.password,
 
             });
-            console.log(response.data);
+            console.log(response);
             login(response.data);
 
             localStorage.setItem('id', response.data.accountId)
@@ -119,10 +81,10 @@ function LoginPage() {
 
                         <Button type="submit" variant="primary">login</Button>
                         <div className="sub-message">
-                            <p>Are you new on this page? <Link to="/register">Register an account first</Link></p>
-                            <p><Link to='/'>Bring me back home</Link></p>
+                            <p>Are you new on this page? <Link className="sub-message__links" to="/register">Register an account first</Link></p>
+                            <p><Link className="sub-message__links" to='/'>Bring me back home</Link></p>
                         </div>
-                        {/*{error && <p>Something went wrong with your login. Please try again.</p>}*/}
+                        {/*{pageNotFound && <p>Something went wrong with your login. Please try again.</p>}*/}
                     </form>
                     {/*: <p>Your login was successful.</p>}*/}
                 </div>

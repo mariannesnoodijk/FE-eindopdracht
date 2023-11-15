@@ -1,6 +1,6 @@
 import React from "react";
-import {Link, useNavigate} from "react-router-dom";
-import './HeroSection.css';
+import {useNavigate} from "react-router-dom";
+import "./HeroSection.css";
 import Button from "../button/Button.jsx";
 
 
@@ -9,10 +9,9 @@ function HeroSection() {
 
 const navigate = useNavigate()
 
-function handleClick() {
-    console.log('Link clicked!');
-    navigate('/matching')
-}
+    function handleClick() {
+        navigate('/matching')
+    }
 
     return (
         <>

@@ -21,7 +21,8 @@ It is allowed to shrink if screen is less wide, but not grow when more space*/
   flex-grow: 0;
 
   background-color: var(--main-color-white);
-  border: 2px solid var(--main-color-white);
+  /*background-color: var(--main-color-medium);*/
+  /*border: 2px solid var(--main-color-white);*/
   text-align: center;
   padding: 50px 0;
   margin: 150px 0 50px 0;
@@ -39,33 +40,17 @@ It is allowed to shrink if screen is less wide, but not grow when more space*/
   background-color: var(--main-color-light);
 }
 
-/*#root {*/
-/*  !*  max-width: 1280px;*!*/
-/*  margin: 0 auto;*/
-/*  !*  padding: 2rem;*!*/
-/*  !*  text-align: center;*!*/
-/*  !*background-color: var(--main-bg-color)*!*/
-/*}*/
-
-/*body {*/
-/*  background-color: var(--main-color-light);*/
-/*  line-height: 1.5;*/
-/*  color: white;*/
-/*}*/
-
-/*a,*/
-/*a:visited {*/
-/*  color: white;*/
-/*  font-weight: bold;*/
-/*}*/
-
-/*a:hover {*/
-/*  color: white;*/
-/*}*/
 
 .sub-message {
   font-weight: lighter;
   font-size: 10px;
+}
+
+.sub-message__links {
+  color: red;
+}
+.sub-message__links:hover {
+  text-decoration: underline;
 }
 
 

@@ -1,5 +1,5 @@
-import React, {createContext, useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, {createContext, useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {jwtDecode} from "jwt-decode";
 
@@ -19,10 +19,10 @@ function AuthContextProvider({children}) {
         if (token) {
             void login(token);
         } else {
-toggleIsAuth({
-    ...isAuth,
-    status: 'done',
-});
+            toggleIsAuth({
+                ...isAuth,
+                status: 'done',
+            });
         }
     }, []);
 
@@ -54,7 +54,6 @@ toggleIsAuth({
                 },
                 status: 'done',
             });
-            console.log('User is logged in!');
             navigate('/profile');
         } catch (e) {
             console.error(e);

@@ -1,7 +1,7 @@
-import './Footer.css';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import {Link, NavLink} from "react-router-dom";
+import "./Footer.css";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import {NavLink} from "react-router-dom";
 
 function Footer() {
     return (
@@ -9,25 +9,11 @@ function Footer() {
             <div className="footer">
                 <div className="sb__footer section__padding">
                     <div className="sb__footer-links">
-                        <div className="sb__footer-links-div">
-                            <Link to="/">Home</Link>
-                        </div>
-                        <div className="sb__footer-links-div">
-                            <Link to="/about">Contact Us</Link>
-                        </div>
-                        <div className="sb__footer-links-div">
-                            <Link to="/about">About</Link>
-                        </div>
-                        <div className="sb__footer-links-div">
-                            <Link to="/properties">View all properties</Link>
-                        </div>
-                        <div className="sb__footer-links-div">
                             <p>Visit me on:</p>
                             <div className="socialmedia">
                                 <p><NavLink to="https://www.linkedin.com/in/mariannesnoodijk/"><LinkedInIcon/></NavLink></p>
                                 <p><NavLink to="https://github.com/mariannesnoodijk"><GitHubIcon/></NavLink></p>
                             </div>
-                        </div>
                     </div>
 
                     <hr></hr>

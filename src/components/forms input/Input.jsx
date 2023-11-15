@@ -1,4 +1,4 @@
-import './Input.css';
+import "./Input.css";
 
 function Input({ labelText, name, handleChange, placeholder, required, type, formStateValue }) {
     const labelInputLink = `account-${name}`;

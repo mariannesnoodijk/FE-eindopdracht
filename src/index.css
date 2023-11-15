@@ -11,7 +11,8 @@
 
 /* GLOBAL SETUP */
 :root {
-  --main-color-light: #F5F5F5;
+  --main-color-light: #EFEFEC;
+  /*--main-color-light: #F5F5F5;*/
   --main-color-white: #FFFFFF;
   --main-color-medium: #D5CCBB;
   --main-color-dark: #2E2E2E;

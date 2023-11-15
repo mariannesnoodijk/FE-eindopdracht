@@ -5,7 +5,7 @@ import Input from "../forms input/Input.jsx";
 import Button from "../button/Button.jsx";
 
 
-export default function AddingOfProperty() {
+export default function PostProperty() {
     const [formState, setFormState] = useState({
         address: '',
         price: '',
@@ -24,7 +24,6 @@ export default function AddingOfProperty() {
     async function handleSubmit(e) {
         e.preventDefault();
         toggleError(false);
-
         console.log({
             ...formState
         });
@@ -35,15 +34,12 @@ export default function AddingOfProperty() {
             });
             console.log(response.data);
 
-            console.log('You have successfully added a property.');
             setSubmitSuccessId(response.data.id);
         } catch (e) {
             console.error(e);
             toggleError(true);
         }
     }
-
-
 
     return (
         <>

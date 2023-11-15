@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PropertyCard from "../../components/propertycard/PropertyCard.jsx";
-import {Build} from "@mui/icons-material";
 import Button from "../../components/button/Button.jsx";
 import {useNavigate, useParams} from "react-router-dom";
 
@@ -14,7 +13,7 @@ function PropertyInfoPage() {
 
     useEffect(() => {
         void fetchPropertyInfo();
-    }, []); // Fetch properties when the component mounts
+    }, []);
 
     async function fetchPropertyInfo() {
         toggleError(false);
@@ -41,22 +40,24 @@ function PropertyInfoPage() {
                     <div className="general-form-top">
                         <h1>property detail</h1>
                     </div>
+                    <div className="general-form">
                     {Object.keys(propertyInfo).length > 0 && (
-                        <div className="container-propertyinfo">
-                    {/*{properties.map((property) => {*/}
+                        // <div className="container-propertyinfo">
+                    // {properties.map((property) => {
                             <PropertyCard
                                 key={propertyInfo.propertyInfoId}
                                 // image={cardImage1}
                                 label="New"
-                                title={`${propertyInfo.streetname} ${propertyInfo.housenumber}`}
+                                title={`${propertyInfo.address}`}
                                 price={propertyInfo.price}
                                 description={propertyInfo.description}
                             />
-                        </div>
+                        // </div>
                     )}
-                    {error && <p>Er is iets misgegaan bij het ophalen van de data. Probeer het opnieuw.</p>}
                     <Button type="submit" variant="primary" onClick={() => navigate('/viewings')} >Afspraak maken</Button>
                     <Button type="submit" variant="primary" onClick={() => navigate('/properties')}>Terug naar overzicht</Button>
+                    {error && <p>Er is iets misgegaan bij het ophalen van de data. Probeer het opnieuw.</p>}
+                </div>
                 </div>
             </section>
         </>

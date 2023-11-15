@@ -1,32 +1,35 @@
-/*form button {*/
-/*    margin-top: 40px;*/
-/*    width: 140px;*/
-/*    height: 40px;*/
-/*    border: none;*/
-/*    background-color: var(--main-color-dark);*/
-/*    border-radius: 20px;*/
-/*    color: whitesmoke;*/
-/*    font-size: 15px;*/
-/*    cursor: pointer;*/
-/*    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;*/
-/*}*/
-
 .button {
-    border: none;
-    /*font-weight: 600;*/
     font-weight: lighter;
     padding: 12px;
-    border-radius: 20px;
+    text-transform: uppercase;
+    width: 300px;
+    margin: auto;
 }
 
 .button-primary {
-    background-color: var(--main-color-dark);
-    color: var(--main-color-light);
+    border: 1px solid var(--main-color-dark);
+    background-color: var(--main-color-white);
+    color: var(--main-color-dark);
     display: inline;
-    text-transform: uppercase;
 }
 
-.button-invisible {
-    background-color: transparent;
-    max-width: 200px;
+.button-primary:hover {
+    background-color: var(--main-color-dark);
+    color: var(--main-color-white);
+    border: 1px solid var(--main-color-white);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button-secondary {
+    background-color: var(--main-color-medium);
+    color: var(--main-color-dark);
+    font-size: 20px;
+    width: 200px;
+}
+
+.button-secondary:hover {
+    background-color: var(--main-color-dark);
+    color: var(--main-color-medium);
+    border: 1px solid var(--main-color-medium);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

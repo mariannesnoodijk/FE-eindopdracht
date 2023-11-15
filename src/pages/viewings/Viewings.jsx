@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
-import InteriorImage from "../../assets/interior.jpg";
+import InteriorImage from "../../assets/otherImages/interior.jpg";
 
 export default function Viewings() {
     const [formState, setFormState] = useState({
@@ -36,8 +36,6 @@ export default function Viewings() {
                 ...formState
             });
             console.log(response.data);
-
-            console.log('Your appointment has been made.');
             setSubmitSuccessId(response.data.id);
         } catch (e) {
             console.error(e);
@@ -51,7 +49,7 @@ export default function Viewings() {
                 <div className="inner-content-container__text-restriction">
                     <div className="general-form-top">
                         <Link to='/'>Bring me back home</Link>
-                        <h1>Make your appointment</h1>
+                        <h1>schedule your viewing</h1>
                     </div>
 
                     {!submitSuccessId ?
@@ -102,12 +100,11 @@ export default function Viewings() {
                             <div className="sub-message">
                             <p><Link to='/'>Bring me back home</Link></p>
                             </div>
-                            {error && <p>Er is iets misgegaan bij het inloggen. Probeer het opnieuw</p>}
+                            {error && <p className="error-message">Oops, something went wrong. Please try again</p>}
                         </form>
                         : <p>Het maken van je afspraak is gelukt. Je account informatie is <Link
                             to={`/accounts/${submitSuccessId}`}>hier</Link> te vinden</p>}
                 </div>
-                {/*</div>*/}
             </section>
         </>
     );

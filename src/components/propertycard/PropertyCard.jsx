@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import React from "react";
+import {useNavigate} from "react-router-dom";
 import Button from "../button/Button.jsx";
-import './PropertyCard.css'
+import "./PropertyCard.css";
 
 function PropertyCard({ label, image, title, price, description }) {
     const navigate = useNavigate();
@@ -9,7 +9,7 @@ function PropertyCard({ label, image, title, price, description }) {
         return(
             <article className="property-card">
                 <span>{label}</span>
-                <img src={image} alt={title}/>
+                {/*<img src={image} alt={title}/>*/}
                 <h2 className="property-card-name">{title}</h2>
                 <h4>€{price},-</h4>
                 <p className="property-card-description">{description}</p>

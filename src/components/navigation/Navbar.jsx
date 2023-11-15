@@ -1,15 +1,17 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState} from "react";
 
-import {Link, NavLink} from 'react-router-dom';
-import './Navbar.css';
-import Dropdown from './dropdown/Dropdown.jsx';
+import {Link, NavLink} from "react-router-dom";
+import "./Navbar.css";
+import Dropdown from "./dropdown/Dropdown.jsx";
 import logo from "../../assets/favicon/PREMIUM CASAS.png";
-import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import {AuthContext} from "../../context/AuthContext.jsx";
 
 function Navbar() {
+    const {isAuthenticated, logout} = useContext(AuthContext);
 
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
@@ -37,7 +39,7 @@ function Navbar() {
     return (
         <>
             <nav className='navbar'>
-                <Link to='/' onClick={closeMobileMenu}>
+                <Link to='/' >
                     <img className='navbar-logo' src={logo} alt="Company logo"/>
                 </Link>
                 <div className='menu-icon' onClick={handleClick}>
@@ -45,25 +47,50 @@ function Navbar() {
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
-                        <NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'} onClick={closeMobileMenu}>Home</NavLink>
+                        <NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
+                                 onClick={closeMobileMenu}>Home</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink to="/properties" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'} onClick={closeMobileMenu}>Properties</NavLink>
+                        <NavLink to="/properties"
+                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
+                                 onClick={closeMobileMenu}>Properties</NavLink>
                     </li>
-                    <li className='nav-item'>
-                    <NavLink to="/about" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'} onClick={closeMobileMenu}>About Us</NavLink>
-                    </li>
-                    <li
-                        className='nav-item'
-                        onMouseEnter={onMouseEnter}
-                        onMouseLeave={onMouseLeave}
-                    >
-                        <NavLink to="/login" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'} onClick={closeMobileMenu}><AccountCircleOutlinedIcon/></NavLink>
-                        {dropdown && <Dropdown/>}
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink to="/favorites" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'} onClick={closeMobileMenu}><FavoriteBorderOutlinedIcon/></NavLink>
-                    </li>
+                    {isAuthenticated ? (
+                            <>
+                                <li className='nav-item'>
+                                    <NavLink to="/"
+                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
+                                             onClick={() => {
+                                                 closeMobileMenu();
+                                                 logout();
+                                             }}>Logout</NavLink>
+                                </li>
+                                <li className='nav-item'>
+                                    <NavLink to="/profile"
+                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
+                                             onClick={() => {
+                                                 closeMobileMenu();
+                                                 logout();
+                                             }}>My profile</NavLink>
+                                </li>
+                            <li className='nav-item'>
+                                <NavLink to="/favorites"
+                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
+                                         onClick={closeMobileMenu}><FavoriteBorderOutlinedIcon/></NavLink>
+                            </li>
+                            </>
+                        ) :
+                            <li
+                                className='nav-item'
+                                onMouseEnter={onMouseEnter}
+                                onMouseLeave={onMouseLeave}
+                            >
+                                <NavLink to="/login"
+                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
+                                         onClick={closeMobileMenu}><AccountCircleOutlinedIcon/></NavLink>
+                                {dropdown && <Dropdown/>}
+                            </li>
+                        }
                 </ul>
             </nav>
         </>

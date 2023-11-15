@@ -46,7 +46,7 @@
 .default-link:hover {
     border-radius: 10px;
     transition: all 0.1s ease-out;
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--main-color-medium);
 }
 

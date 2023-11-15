@@ -1,5 +1,5 @@
-import './PageNotFound.css';
-import {useNavigate} from 'react-router-dom';
+import "./PageNotFound.css";
+import {useNavigate} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
 
 function PageNotFound() {

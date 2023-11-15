@@ -2,7 +2,6 @@
     position: absolute;
 }
 
-
 .cardContainer {
     width: 90vw;
     max-width: 260px;
@@ -12,14 +11,12 @@
 
 .card {
     position: relative;
-    background-color: #fff;
     width: 80vw;
-    max-width: 260px;
+    max-width: 50%;
     height: 300px;
     box-shadow: rgba(0, 0, 0, 0.04) 0 3px 5px;
-    border-radius: 20px;
+    border-radius: 10px;
     background-size: cover;
-    background-position: center;
 }
 
 .cardContent {
@@ -35,24 +32,16 @@
     position: absolute;
     bottom: 0;
     margin: 10px;
-    color: #fff;
+    color: var(--main-color-white);
 }
 
 .infoText {
     width: 100%;
     justify-content: center;
     display: flex;
-    color: #fff;
+    color: var(--main-color-white);
     animation-name: popup;
     animation-duration: 800ms;
-}
-
-.buttons-matching {
-    margin: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
 }
 
 @media (max-width: 625px) {
@@ -64,11 +53,10 @@
 .buttons-matching button {
     flex-shrink: 0;
     padding: 10px;
-    border-radius: 20px;
-    border: none;
-    color: #fff;
     font-size: 18px;
-    background-color: var(--main-color-medium);
+    border: 1px solid var(--main-color-dark);
+    background-color: var(--main-color-light);
+    color: var(--main-color-dark);
     transition: 200ms;
     margin: 10px;
     font-weight: bolder;

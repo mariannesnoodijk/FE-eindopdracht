@@ -1,10 +1,10 @@
-import './RegisterPage.css';
+import "./RegisterPage.css";
 import {useState} from "react";
 import axios from "axios";
-import Input from '../../components/forms input/Input.jsx';
+import Input from "../../components/forms input/Input.jsx";
 import {Link, useNavigate} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
-import InteriorImage from "../../assets/interior.jpg";
+import InteriorImage from "../../assets/otherImages/interior.jpg";
 
 export default function Register() {
     const [formState, setFormState] = useState({
@@ -47,7 +47,7 @@ export default function Register() {
 
             console.log('You are successfully registered as a new user.');
             console.log(response.data.accountId);
-
+localStorage.setItem('id', response.data.accountId)
         } catch (e) {
             console.error(e);
             toggleError(true);

@@ -1,10 +1,8 @@
 import Button from "../button/Button.jsx";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import CircularProgress from '@mui/material/CircularProgress';
 
-
-export default function DeletingOfProperty() {
+export default function DeleteProperty() {
     const [property, setProperty] = useState([]);
     const [formState, setFormState] = useState('');
     const [error, toggleError] = useState(false);
@@ -24,8 +22,6 @@ export default function DeletingOfProperty() {
             console.log(response.data)
         } catch (e) {
             console.error(e);
-            console.error("Error status:", e.response.status);
-            console.error("Error data:", e.response.data);
             toggleError(true);
         }
         toggleLoading(false)
