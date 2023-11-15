@@ -75,13 +75,13 @@ function LoginPage() {
         try {
             const response = await axios.post('http://localhost:8080/auth', {
                 username: formState.username,
-                // username : '',
                 password: formState.password,
 
             });
-            console.log(response)
-            // login(response.data.accessToken);
+            console.log(response.data);
+            login(response.data);
 
+            localStorage.setItem('id', response.data.accountId)
 
         } catch (e) {
             console.error(e);

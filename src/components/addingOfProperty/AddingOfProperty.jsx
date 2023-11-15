@@ -51,12 +51,11 @@ export default function AddingOfProperty() {
                 <div className="inner-content-container__text-restriction">
                     <div className="general-form-top">
                         <Link to='/'>Bring me back home</Link>
-                        <h1>Hello Admin</h1>
+                        <h1>adding a property</h1>
                     </div>
 
                         {!submitSuccessId ?
                             <form className="general-form" onSubmit={handleSubmit}>
-                                <h1>adding a property</h1>
                                 <Input
                                     type="text"
                                     name="address"

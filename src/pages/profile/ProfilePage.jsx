@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Button from "../../components/button/Button.jsx";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import './ProfilePage.css';
 import AddingOfProperty from "../../components/addingOfProperty/AddingOfProperty.jsx";
 import DeletingOfProperty from "../../components/deletingOfProperty/DeletingOfProperty.jsx";
+import {AuthContext} from "../../context/AuthContext.jsx";
 
 function ProfilePage() {
     const [error, toggleError] = useState(false);
@@ -11,25 +13,27 @@ function ProfilePage() {
     const [account, setAccount] = useState([]);
     const [formState, setFormState] = useState('');
 
-    useEffect(() => {
-        void fetchAccounts();
-    }, []);
+    const {user} = useContext(AuthContext);
 
-
-    async function fetchAccounts() {
-        toggleError(false);
-        toggleLoading(true);
-        try {
-            const response = await axios.get('http://localhost:8080/accounts');
-            setAccount(response.data);
-            console.log(response.data)
-        } catch (e) {
-            console.error(e);
-            toggleError(true);
-        }
-        toggleLoading(false)
-    }
-
+    // useEffect(() => {
+    //     void fetchAccounts();
+    // }, []);
+    //
+    //
+    // async function fetchAccounts() {
+    //     toggleError(false);
+    //     toggleLoading(true);
+    //     try {
+    //         const response = await axios.get('http://localhost:8080/accounts');
+    //         setAccount(response.data);
+    //         console.log(response.data)
+    //     } catch (e) {
+    //         console.error(e);
+    //         toggleError(true);
+    //     }
+    //     toggleLoading(false)
+    // }
+    console.log(user)
     async function deleteAccount() {
         console.log(formState)
         try {
@@ -42,17 +46,22 @@ function ProfilePage() {
 
     return (
         <>
-            <div></div>
-            <div>
-                {account.map((account) => (
+                <section className="overview-section outer-content-container">
+                    <div className="inner-content-container">
+                        <div className="general-form-top">
+                            <h1>profile page</h1>
+                        </div>
+                {/*{account.map((account) => {*/}
+                return (
                     <>
-                        <section>
-                            <h1 key={account.id}>Hello, {account.firstname}, here are your details:</h1>
-                            <p key={account.id}>First name: {account.firstname}</p>
-                            <p>Last name: {account.lastname}</p>
-                            <p>Email: {account.email}</p>
+                        <section className="profilepage__accountinfo">
+                            <h1 key={user.id}>Welcome {user.firstname}</h1>
+                            <h2>Accountinformation:</h2>
+                            <p key={user.id}>First name: {user.firstname}</p>
+                            <p>Last name: {user.lastname}</p>
+                            <p>Email: {user.email}</p>
                         </section>
-                        <section>
+                        <section className="profilepage__accountinfo">
                             <h2>Content visible after login</h2>
                             <Button type="button" onClick={deleteAccount} variant="primary">Delete account</Button>
                             <AddingOfProperty/>
@@ -60,9 +69,9 @@ function ProfilePage() {
                         </section>
                         <p>Back to <Link to="/">home</Link></p>
                     </>
-                ))}
-            </div>
-
+                {/*)})};*/}
+                    </div>
+                </section>
         </>
     );
 }

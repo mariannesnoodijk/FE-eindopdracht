@@ -32,7 +32,7 @@ export default function Register() {
         e.preventDefault();
         toggleError(false);
 
-        console.log({
+        console.log('form', {
             ...formState
         });
 
@@ -42,11 +42,12 @@ export default function Register() {
             const response = await axios.post('http://localhost:8080/accounts', {
                 ...formState
             });
-            console.log(response.data);
+            console.log('response', response.data);
             // navigate('/login')
 
             console.log('You are successfully registered as a new user.');
-            console.log(response.data.id);
+            console.log(response.data.accountId);
+
         } catch (e) {
             console.error(e);
             toggleError(true);

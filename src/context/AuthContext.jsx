@@ -10,6 +10,7 @@ function AuthContextProvider({children}) {
         isAuthenticated: false,
         user: null,
         status: 'pending',
+        token: null,
     });
 
     useEffect(() => {
@@ -29,15 +30,17 @@ toggleIsAuth({
 
     async function login(token) {
         localStorage.setItem('token', token);
-        console.log(token)
-        const userInfo = jwtDecode(token);
-        const userId = userInfo.sub;
+        // const userInfo = jwtDecode(token);
+        // const userId = userInfo.sub;
+        // console.log(userInfo)
+
+        const id = localStorage.getItem('id')
 
         try {
-            const response = await axios.get(`http://localhost:8080/accounts/${userId}`, {
+            const response = await axios.get(`http://localhost:8080/accounts/${id}`, {
                 headers: {
                     "Content-Type": 'application/json',
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `${token}`,
                 }
             });
             console.log(response);
@@ -51,6 +54,7 @@ toggleIsAuth({
                 },
                 status: 'done',
             });
+            console.log('User is logged in!');
             navigate('/profile');
         } catch (e) {
             console.error(e);
@@ -59,8 +63,14 @@ toggleIsAuth({
                 status: 'done',
             })
         }
-        console.log('User is logged in!');
 
+
+        // toggleIsAuth({
+        //     isAuthenticated: true,
+        //     user: null,
+        //     status: 'pending',
+        //     token: token,
+        // })
     }
 
     function logout() {
@@ -75,6 +85,7 @@ toggleIsAuth({
 
     const contextData = {
         ...isAuth,
+        user: isAuth.user,
         login: login,
         logout: logout,
     };
