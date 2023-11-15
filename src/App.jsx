@@ -30,14 +30,12 @@ const {isAuth} = useContext(AuthContext);
                   <Route path="/" element={<Homepage/>}/>
                   <Route path="/about" element={<AboutPage/>}/>
                   <Route path="/properties" element={<Properties/>}/>
-                  {/*TODO: PAS ONDERSTAANDE LINK CORRECT AAN AFHANKELIJK VAN JUISTE ENDPOINT*/}
                   <Route path="/addingOfProperty" element={<AddingOfProperty/>}/>
                   <Route path="/properties/:propertyId" element={<PropertyInfoPage/>}/>
-                  <Route path="/propertyMatching" element={<PropertyMatching/>}/>
+                  <Route path="/matching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/register" element={<Register/>}/>
                   <Route path="/profile" element={<ProfilePage/>}/>
-                  {/*<Route path="/accounts/:accountId" element={<ProfilePage/>}/>*/}
                   {/*<Route path="/profile" element={isAuth ? <ProfilePage/> : <Navigate to="/"/>}/>*/}
                   <Route path="/viewings" element={<Viewings/>}/>
                   <Route path="/favorites" element={<Favorites/>}/>

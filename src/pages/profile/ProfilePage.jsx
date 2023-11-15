@@ -47,11 +47,6 @@ function ProfilePage() {
                 {account.map((account) => (
                     <>
                         <section>
-                            <h1>Profilepage</h1>
-                            <h2>Information</h2>
-                            <p><strong>Gebruikersnaam:</strong> hardcoded-test</p>
-                            <p><strong>Email:</strong> hardcoded@test.com</p>
-
                             <h1 key={account.id}>Hello, {account.firstname}, here are your details:</h1>
                             <p key={account.id}>First name: {account.firstname}</p>
                             <p>Last name: {account.lastname}</p>
@@ -59,17 +54,15 @@ function ProfilePage() {
                         </section>
                         <section>
                             <h2>Content visible after login</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor
-                                dolore fuga id molestias qui quo unde?</p>
+                            <Button type="button" onClick={deleteAccount} variant="primary">Delete account</Button>
+                            <AddingOfProperty/>
+                            <DeletingOfProperty/>
                         </section>
                         <p>Back to <Link to="/">home</Link></p>
                     </>
                 ))}
             </div>
 
-            <Button type="button" onClick={deleteAccount} variant="primary">Delete account</Button>
-            <AddingOfProperty/>
-            <DeletingOfProperty/>
         </>
     );
 }
