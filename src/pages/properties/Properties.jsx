@@ -12,12 +12,18 @@ import axios from "axios";
 import PropertyCard from "../../components/propertycard/PropertyCard.jsx";
 import AddingOfProperty from "../../components/addingOfProperty/AddingOfProperty.jsx";
 import DeletingOfProperty from "../../components/deletingOfProperty/DeletingOfProperty.jsx";
+import Input from "../../components/forms input/Input.jsx";
 
 
 function Properties() {
     const [properties, setProperties] = useState([]);
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
+
+    useEffect(() => {
+        fetchProperties()
+    }, []); // Fetch properties when the component mounts
+
     const navigate = useNavigate()
 
 
@@ -36,9 +42,6 @@ function Properties() {
     //     }
     // };
 
-    useEffect(() => {
-        fetchProperties()
-    }, []); // Fetch properties when the component mounts
 
     async function fetchProperties() {
         toggleError(false);
@@ -67,6 +70,7 @@ function Properties() {
                         <h1>property overview</h1>
                     </div>
                     <div className="property-container">
+
                         {properties.map((property) => {
                             return (
                                 <PropertyCard
@@ -80,12 +84,9 @@ function Properties() {
                             )
                         })}
                     </div>
-                    <Button type="button" onClick={handleClick} variant="primary">view all properties</Button>
                 </div>
                 {loading && <p>Loading...</p>}
             </section>
-                <AddingOfProperty/>
-            <DeletingOfProperty/>
         </>
     );
 }
