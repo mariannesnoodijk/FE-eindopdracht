@@ -6,7 +6,7 @@ export const DropdownItems = [
     },
     {
         title: 'Register',
-        path: '/accounts',
+        path: '/register',
         cName: 'dropdown-link'
     }
 ];

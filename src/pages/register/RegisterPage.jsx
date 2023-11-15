@@ -12,11 +12,11 @@ export default function Register() {
         lastname: '',
         username: '',
         password: '',
-        emailaddress: '',
+        email: '',
         role: '',
         // role: [], __> check wat in back staat!
     });
-    const [submitSuccessId, setSubmitSuccessId] = useState(null);
+
     const [error, toggleError] = useState(false)
 
     const navigate = useNavigate()
@@ -46,7 +46,7 @@ export default function Register() {
             // navigate('/login')
 
             console.log('You are successfully registered as a new user.');
-            setSubmitSuccessId(response.data.id);
+            console.log(response.data.id);
         } catch (e) {
             console.error(e);
             toggleError(true);
@@ -61,7 +61,6 @@ export default function Register() {
                         <h1>Register</h1>
                     </div>
 
-                    {!submitSuccessId ?
                         <form className="general-form" onSubmit={handleSubmit}>
                             {/*<div className="general-form-img">*/}
                             <img src={InteriorImage} alt="Image of the interior of a home"/>
@@ -102,10 +101,10 @@ export default function Register() {
                             />
                             <Input
                                 type="email"
-                                name="emailaddress"
+                                name="email"
                                 labelText="email address"
                                 required={true}
-                                formStateValue={formState.emailaddress}
+                                formStateValue={formState.email}
                                 handleChange={handleChange}
                             />
                             <Input
@@ -133,7 +132,7 @@ export default function Register() {
                             {error && <p>Something went wrong with your registration. Please try again.</p>}
                             {/*</div>*/}
                         </form>
-                        : <p>Your registration was successful. Your account information can be found <Link to={`/accounts/${submitSuccessId}`}>here</Link>.</p>}
+
             </div>
                 </section>
         </>

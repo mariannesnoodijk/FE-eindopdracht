@@ -68,7 +68,7 @@ function Navbar() {
                         {/*</li>*/}
                         {/*<li className='nav-item'>*/}
                         {/*    <NavLink*/}
-                        {/*        to='/accountOverview'*/}
+                        {/*        to='/profile'*/}
                         {/*        className={({isActive}) => isActive ? 'nav-links' : 'default'}*/}
                         {/*        onClick={closeMobileMenu}*/}
                         {/*    >*/}
@@ -185,7 +185,7 @@ export default Navbar;
 //                     {/*</li>*/}
 //                     {/*<li className='nav-item'>*/}
 //                     {/*    <NavLink*/}
-//                     {/*        to='/accountOverview'*/}
+//                     {/*        to='/profile'*/}
 //                     {/*        className={({isActive}) => isActive ? 'nav-links' : 'default'}*/}
 //                     {/*        onClick={closeMobileMenu}*/}
 //                     {/*    >*/}
