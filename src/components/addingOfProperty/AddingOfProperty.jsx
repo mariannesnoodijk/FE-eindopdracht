@@ -7,8 +7,7 @@ import Button from "../button/Button.jsx";
 
 export default function AddingOfProperty() {
     const [formState, setFormState] = useState({
-        streetname: '',
-        housenumber: '',
+        address: '',
         price: '',
         description: '',
     });
@@ -31,7 +30,7 @@ export default function AddingOfProperty() {
         });
 
         try {
-            const response = await axios.post('http://localhost:8084/properties', {
+            const response = await axios.post('http://localhost:8080/properties', {
                 ...formState
             });
             console.log(response.data);
@@ -43,6 +42,8 @@ export default function AddingOfProperty() {
             toggleError(true);
         }
     }
+
+
 
     return (
         <>
@@ -58,18 +59,10 @@ export default function AddingOfProperty() {
                                 <h1>adding a property</h1>
                                 <Input
                                     type="text"
-                                    name="streetname"
-                                    labelText="Streetname"
+                                    name="address"
+                                    labelText="Address"
                                     required={true}
-                                    formStateValue={formState.streetname}
-                                    handleChange={handleChange}
-                                />
-                                <Input
-                                    type="text"
-                                    name="housenumber"
-                                    labelText="Housenumber"
-                                    required={true}
-                                    formStateValue={formState.housenumber}
+                                    formStateValue={formState.address}
                                     handleChange={handleChange}
                                 />
                                 <Input
@@ -89,11 +82,12 @@ export default function AddingOfProperty() {
                                     rows="10"
                                     required
                                     minLength={3}
-                                    maxLength={2000}
+                                    maxLength={700}
                                     value={formState.description}
                                     onChange={handleChange}></textarea>
 
                                 <Button type="submit" variant="primary">send</Button>
+
                                 {error && <p>Something went wrong with adding a property. Please try again.</p>}
                             </form>
                             : <p>You have successfully added a property.</p>}

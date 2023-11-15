@@ -29,7 +29,7 @@ toggleIsAuth({
 
     async function login(token) {
         localStorage.setItem('token', token);
-
+        console.log(token)
         const userInfo = jwtDecode(token);
         const userId = userInfo.sub;
 
@@ -51,7 +51,7 @@ toggleIsAuth({
                 },
                 status: 'done',
             });
-
+            navigate('/profile');
         } catch (e) {
             console.error(e);
             toggleIsAuth({

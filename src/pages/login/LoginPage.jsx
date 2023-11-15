@@ -68,20 +68,20 @@ function LoginPage() {
     const {login} = useContext(AuthContext);
 
     const navigate = useNavigate();
+
     async function handleSubmit(e) {
         e.preventDefault();
 
         try {
             const response = await axios.post('http://localhost:8080/auth', {
-                email: '',
+                username: formState.username,
                 // username : '',
-                password: '',
+                password: formState.password,
 
             });
-            console.log(response.data.accessToken);
-            login(response.data.accessToken);
+            console.log(response)
+            // login(response.data.accessToken);
 
-            navigate('/profile');
 
         } catch (e) {
             console.error(e);
@@ -119,7 +119,7 @@ function LoginPage() {
 
                         <Button type="submit" variant="primary">login</Button>
                         <div className="sub-message">
-                            <p>Are you new on this page? <Link to="/accounts">Register an account first</Link></p>
+                            <p>Are you new on this page? <Link to="/register">Register an account first</Link></p>
                             <p><Link to='/'>Bring me back home</Link></p>
                         </div>
                         {/*{error && <p>Something went wrong with your login. Please try again.</p>}*/}
