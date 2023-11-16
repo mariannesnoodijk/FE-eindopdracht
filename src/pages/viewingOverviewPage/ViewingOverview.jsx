@@ -5,7 +5,7 @@ import axios from "axios";
 import {useParams} from "react-router-dom";
 
 
-export default function ViewingOverview() {
+function ViewingOverview() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const [viewing, setViewing] = useState([]);
@@ -67,3 +67,5 @@ export default function ViewingOverview() {
       </>
     );
 }
+
+export default ViewingOverview;

@@ -5,7 +5,7 @@ import Input from "../forms input/Input.jsx";
 import Button from "../button/Button.jsx";
 
 
-export default function PostProperty() {
+function PostProperty() {
     const [formState, setFormState] = useState({
         address: '',
         price: '',
@@ -94,3 +94,5 @@ export default function PostProperty() {
         </>
     );
 }
+
+export default PostProperty;
