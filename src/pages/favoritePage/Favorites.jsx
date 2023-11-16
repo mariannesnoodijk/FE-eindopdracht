@@ -1,5 +1,5 @@
 
-export default function Favorites() {
+function Favorites() {
 
     return (
        <>
@@ -13,3 +13,5 @@ export default function Favorites() {
        </>
     );
 }
+
+export default Favorites;

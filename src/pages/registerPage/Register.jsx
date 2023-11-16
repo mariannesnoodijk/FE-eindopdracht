@@ -6,7 +6,7 @@ import Button from "../../components/button/Button.jsx";
 import InteriorImage from "../../assets/otherImages/interior.jpg";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
 
-export default function Register() {
+function Register() {
     const [formState, setFormState] = useState({
         firstname: '',
         lastname: '',
@@ -144,3 +144,5 @@ localStorage.setItem('id', response.data.accountId)
         </>
     );
 }
+
+export default Register;
