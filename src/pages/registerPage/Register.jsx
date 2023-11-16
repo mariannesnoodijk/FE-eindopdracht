@@ -1,22 +1,22 @@
-import "./RegisterPage.css";
 import {useState} from "react";
 import axios from "axios";
 import Input from "../../components/forms input/Input.jsx";
 import {Link, useNavigate} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
 import InteriorImage from "../../assets/otherImages/interior.jpg";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
 
 export default function Register() {
     const [formState, setFormState] = useState({
         firstname: '',
         lastname: '',
+        email: '',
         username: '',
         password: '',
-        email: '',
-        role: '',
+        // role: '',
         // role: [], __> check wat in back staat!
     });
-
+    const [submitSuccessId, setSubmitSuccessId] = useState(null);
     const [error, toggleError] = useState(false)
 
     const navigate = useNavigate()
@@ -43,9 +43,8 @@ export default function Register() {
                 ...formState
             });
             console.log('response', response.data);
-            // navigate('/login')
+            // navigate('/loginPage')
 
-            console.log('You are successfully registered as a new user.');
             console.log(response.data.accountId);
 localStorage.setItem('id', response.data.accountId)
         } catch (e) {
@@ -61,7 +60,7 @@ localStorage.setItem('id', response.data.accountId)
                     <div className="general-form-top">
                         <h1>Register</h1>
                     </div>
-
+                    {!submitSuccessId ?
                         <form className="general-form" onSubmit={handleSubmit}>
                             {/*<div className="general-form-img">*/}
                             <img src={InteriorImage} alt="Image of the interior of a home"/>
@@ -87,6 +86,15 @@ localStorage.setItem('id', response.data.accountId)
                                 handleChange={handleChange}
                             />
                             <Input
+                                type="email"
+                                name="email"
+                                labelText="email address"
+                                placeholder="Please type your email address here..."
+                                required={true}
+                                formStateValue={formState.email}
+                                handleChange={handleChange}
+                            />
+                            <Input
                                 type="text"
                                 name="username"
                                 labelText="username"
@@ -104,40 +112,32 @@ localStorage.setItem('id', response.data.accountId)
                                 formStateValue={formState.password}
                                 handleChange={handleChange}
                             />
-                            <Input
-                                type="email"
-                                name="email"
-                                labelText="email address"
-                                placeholder="Please type your email address here..."
-                                required={true}
-                                formStateValue={formState.email}
-                                handleChange={handleChange}
-                            />
-                            <Input
-                                type="radio"
-                                name="role"
-                                labelText="admin"
-                                required={true}
-                                formStateValue="ADMIN"
-                                handleChange={handleChange}
-                            />
-                            <Input
-                                type="radio"
-                                name="role"
-                                labelText="user"
-                                required={true}
-                                formStateValue="USER"
-                                handleChange={handleChange}
-                            />
+                            {/*<Input*/}
+                            {/*    type="radio"*/}
+                            {/*    name="role"*/}
+                            {/*    labelText="admin"*/}
+                            {/*    required={true}*/}
+                            {/*    formStateValue="ADMIN"*/}
+                            {/*    handleChange={handleChange}*/}
+                            {/*/>*/}
+                            {/*<Input*/}
+                            {/*    type="radio"*/}
+                            {/*    name="role"*/}
+                            {/*    labelText="user"*/}
+                            {/*    required={true}*/}
+                            {/*    formStateValue="USER"*/}
+                            {/*    handleChange={handleChange}*/}
+                            {/*/>*/}
 
                             <Button type="submit" variant="primary">register</Button>
                             <div className="sub-message">
                             <p>Do you already have an account with us? <Link to="/login">Try logging in</Link></p>
                                 <p><Link to='/'>Bring me back home</Link></p>
                             </div>
-                            {error && <p>Something went wrong with your registration. Please try again.</p>}
+                            {error && <ErrorMessage message="Your registration was unsuccessful. Please try again."/>}
                             {/*</div>*/}
                         </form>
+                            : <p>Your registration was successful.</p>}
 
             </div>
                 </section>

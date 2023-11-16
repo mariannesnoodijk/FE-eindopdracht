@@ -1,4 +1,3 @@
-import "./LoginPage.css";
 import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import Input from "../../components/forms input/Input.jsx";
@@ -7,8 +6,9 @@ import Button from "../../components/button/Button.jsx";
 import {useNavigate} from "react-router-dom"
 import InteriorImage from "../../assets/otherImages/interior.jpg";
 import {AuthContext} from "../../context/AuthContext.jsx";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
 
-function LoginPage() {
+function Login() {
     const [formState, setFormState] = useState({
         username: '',
         password: '',
@@ -50,6 +50,7 @@ function LoginPage() {
 
         } catch (e) {
             console.error(e);
+            toggleError(true);
         }
     }
 
@@ -63,7 +64,7 @@ function LoginPage() {
 
                     {!submitSuccessId ?
                     <form className="general-form" onSubmit={handleSubmit}>
-                        <img src={InteriorImage} alt="Image of the interior of a home"/>
+                        <img className="general-form__image" src={InteriorImage} alt="Image of the interior of a home"/>
                         <h1>welcome back</h1>
                         <Input
                             type="text"
@@ -89,7 +90,7 @@ function LoginPage() {
                             <p>Are you new on this page? <Link className="sub-message__links" to="/register">Register an account first</Link></p>
                             <p><Link className="sub-message__links" to='/'>Bring me back home</Link></p>
                         </div>
-                        {error && <p>Something went wrong with your login. Please try again.</p>}
+                        {error && <ErrorMessage message="Your login was unsuccessful. Please try again."/>}
                     </form>
                     : <p>Your login was successful.</p>}
                 </div>
@@ -98,4 +99,4 @@ function LoginPage() {
     );
 }
 
-export default LoginPage;
+export default Login;
