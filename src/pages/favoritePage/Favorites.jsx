@@ -1,7 +1,6 @@
-import React from "react";
-
 
 export default function Favorites() {
+
     return (
        <>
            <section className="overview-section outer-content-container">

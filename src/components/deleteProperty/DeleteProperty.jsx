@@ -2,7 +2,7 @@ import Button from "../button/Button.jsx";
 import axios from "axios";
 import {useEffect, useState} from "react";
 
-export default function DeleteProperty() {
+function DeleteProperty() {
     const [property, setProperty] = useState([]);
     const [formState, setFormState] = useState('');
     const [error, toggleError] = useState(false);
@@ -68,3 +68,5 @@ export default function DeleteProperty() {
         </>
     );
 }
+
+export default DeleteProperty;
