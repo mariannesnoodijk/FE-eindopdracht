@@ -6,16 +6,16 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import {Link, useNavigate} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
-import image1 from "../../assets/propertyImages/property_1.jpg";
-import image2 from "../../assets/propertyImages/property_2.jpg";
-import image3 from "../../assets/propertyImages/property_3.jpg";
-import image4 from "../../assets/propertyImages/property_4.jpg";
-import image5 from "../../assets/propertyImages/property_5.jpg";
-import image6 from "../../assets/propertyImages/property_6.jpg";
-import image7 from "../../assets/propertyImages/property_7.jpg";
-import image8 from "../../assets/propertyImages/property_8.jpg";
-import image9 from "../../assets/propertyImages/property_9.jpeg";
-import image10 from "../../assets/propertyImages/property_10.jpg";
+import image1 from "../../assets/img/property_1.jpg";
+import image2 from "../../assets/img/property_2.jpg";
+import image3 from "../../assets/img/property_3.jpg";
+import image4 from "../../assets/img/property_4.jpg";
+import image5 from "../../assets/img/property_5.jpg";
+import image6 from "../../assets/img/property_6.jpg";
+import image7 from "../../assets/img/property_7.jpg";
+import image8 from "../../assets/img/property_8.jpg";
+import image9 from "../../assets/img/property_9.jpeg";
+import image10 from "../../assets/img/property_10.jpg";
 
 
 const slides = [ //creates an array of objects: []=array, [{}]=object within array

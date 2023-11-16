@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
-import InteriorImage from "../../assets/otherImages/interior.jpg";
+import InteriorImage from "../../assets/img/interior_1.jpg";
 
 function ScheduleViewing() {
     const [formState, setFormState] = useState({

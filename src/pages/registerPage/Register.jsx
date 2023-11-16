@@ -3,7 +3,7 @@ import axios from "axios";
 import Input from "../../components/forms input/Input.jsx";
 import {Link, useNavigate} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
-import InteriorImage from "../../assets/otherImages/interior.jpg";
+import InteriorImage from "../../assets/img/interior_1.jpg";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
 
 function Register() {

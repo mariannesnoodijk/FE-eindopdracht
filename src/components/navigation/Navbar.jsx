@@ -3,7 +3,7 @@ import React, {useContext, useState} from "react";
 import {Link, NavLink, useNavigate} from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./dropdown/Dropdown.jsx";
-import logo from "../../assets/favicon/PREMIUM CASAS.png";
+import logo from "../../assets/favicon/premium-casas.png";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";

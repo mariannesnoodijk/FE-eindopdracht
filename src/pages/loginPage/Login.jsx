@@ -4,7 +4,7 @@ import Input from "../../components/forms input/Input.jsx";
 import {Link} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
 import {useNavigate} from "react-router-dom"
-import InteriorImage from "../../assets/otherImages/interior.jpg";
+import InteriorImage from "../../assets/img/interior_1.jpg";
 import {AuthContext} from "../../context/AuthContext.jsx";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
 

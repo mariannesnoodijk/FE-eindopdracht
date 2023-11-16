@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import Button from "../button/Button.jsx";
 import "./PropertyCard.css";
-import property1 from "../../assets/propertyImages/property_1.jpg";
+import property1 from "../../assets/img/property_1.jpg";
 import axios from "axios";
 
 function PropertyCard({ label, image, title, price, description }) {
@@ -29,7 +29,11 @@ function PropertyCard({ label, image, title, price, description }) {
                 <h4 className="property-card-price">€ {price},-</h4>
                 <p className="property-card-description">{description}</p>
                 <Button type="button" variant="primary" onClick={() => navigate('/properties/${propertyId}')}>more info</Button>
+                {/*{isAuthenticated ? (*/}
                 <Button type="button" onClick={deleteProperty}>Delete property</Button>
+                {/*) :*/}
+                {/*TODO: WAT VUL IK HIER IN?*/}
+                {/*}*/}
             </article>
         );
     }
