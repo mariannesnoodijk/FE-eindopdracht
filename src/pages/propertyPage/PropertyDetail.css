@@ -1,0 +1,8 @@
+.property-detail-section {
+    min-height: 84vh;
+}
+
+.property-detail-section h1,
+.property-detail-section h2 {
+    margin-block: 0.3em;
+}
