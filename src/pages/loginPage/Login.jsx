@@ -1,5 +1,5 @@
 import "./LoginPage.css";
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import Input from "../../components/forms input/Input.jsx";
 import {Link} from "react-router-dom";
@@ -14,12 +14,18 @@ function LoginPage() {
         password: '',
     });
     const [submitSuccessId, setSubmitSuccessId] = useState(null);
-//     const [loading, toggleLoading] = useState(false);
-//     const [pageNotFound, toggleError] = useState(false);
-//     const {login} = useContext(AuthContext);
-//
-//     const navigate = useNavigate()
-//
+    const [loading, toggleLoading] = useState(false);
+    const [error, toggleError] = useState(false);
+
+    useEffect(() => {
+        // handleSubmit()
+    }, []);
+
+    const {login} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+
     function handleChange(e) {
         setFormState({
             ...formState,
@@ -27,9 +33,6 @@ function LoginPage() {
         })
     }
 
-    const {login} = useContext(AuthContext);
-
-    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -58,7 +61,7 @@ function LoginPage() {
                         <h1>Login</h1>
                     </div>
 
-                    {/*{!submitSuccessId ?*/}
+                    {!submitSuccessId ?
                     <form className="general-form" onSubmit={handleSubmit}>
                         <img src={InteriorImage} alt="Image of the interior of a home"/>
                         <h1>welcome back</h1>
@@ -66,6 +69,7 @@ function LoginPage() {
                             type="text"
                             name="username"
                             labelText="username"
+                            placeholder="Please type your username here..."
                             required={true}
                             formStateValue={formState.username}
                             handleChange={handleChange}
@@ -74,6 +78,7 @@ function LoginPage() {
                             type="password"
                             name="password"
                             labelText="password"
+                            placeholder="Please type your password here..."
                             required={true}
                             formStateValue={formState.password}
                             handleChange={handleChange}
@@ -84,9 +89,9 @@ function LoginPage() {
                             <p>Are you new on this page? <Link className="sub-message__links" to="/register">Register an account first</Link></p>
                             <p><Link className="sub-message__links" to='/'>Bring me back home</Link></p>
                         </div>
-                        {/*{pageNotFound && <p>Something went wrong with your login. Please try again.</p>}*/}
+                        {error && <p>Something went wrong with your login. Please try again.</p>}
                     </form>
-                    {/*: <p>Your login was successful.</p>}*/}
+                    : <p>Your login was successful.</p>}
                 </div>
             </section>
         </>

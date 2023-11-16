@@ -48,7 +48,7 @@ function PropertyMatching() {
     )
 
     function handleClick() {
-        navigate('/viewings')
+        navigate('/viewingsPage')
     }
 
     const updateCurrentIndex = (val) => {

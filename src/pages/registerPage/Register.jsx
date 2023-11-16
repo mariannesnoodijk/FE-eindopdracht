@@ -72,6 +72,7 @@ localStorage.setItem('id', response.data.accountId)
                                 type="text"
                                 name="firstname"
                                 labelText="first name"
+                                placeholder="Please type your first name here..."
                                 required={true}
                                 formStateValue={formState.firstname}
                                 handleChange={handleChange}
@@ -80,6 +81,7 @@ localStorage.setItem('id', response.data.accountId)
                                 type="text"
                                 name="lastname"
                                 labelText="last name"
+                                placeholder="Please type your last name here..."
                                 required={true}
                                 formStateValue={formState.lastname}
                                 handleChange={handleChange}
@@ -88,6 +90,7 @@ localStorage.setItem('id', response.data.accountId)
                                 type="text"
                                 name="username"
                                 labelText="username"
+                                placeholder="Please type your username here..."
                                 required={true}
                                 formStateValue={formState.username}
                                 handleChange={handleChange}
@@ -96,6 +99,7 @@ localStorage.setItem('id', response.data.accountId)
                                 type="password"
                                 name="password"
                                 labelText="password"
+                                placeholder="Please type your password here..."
                                 required={true}
                                 formStateValue={formState.password}
                                 handleChange={handleChange}
@@ -104,6 +108,7 @@ localStorage.setItem('id', response.data.accountId)
                                 type="email"
                                 name="email"
                                 labelText="email address"
+                                placeholder="Please type your email address here..."
                                 required={true}
                                 formStateValue={formState.email}
                                 handleChange={handleChange}

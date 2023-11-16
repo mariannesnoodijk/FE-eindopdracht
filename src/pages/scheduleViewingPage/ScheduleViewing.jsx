@@ -59,6 +59,7 @@ export default function Viewings() {
                                 type="text"
                                 name="fullname"
                                 labelText="Fill in your full name"
+                                placeholder="Please type your full name here..."
                                 required={true}
                                 formStateValue={formState.fullname}
                                 handleChange={handleChange}
@@ -67,6 +68,7 @@ export default function Viewings() {
                                 type="text"
                                 name="phonenumber"
                                 labelText="Fill in your phone number"
+                                placeholder="Please type your phone number here..."
                                 required={true}
                                 formStateValue={formState.phonenumber}
                                 handleChange={handleChange}
@@ -75,6 +77,7 @@ export default function Viewings() {
                                 type="email"
                                 name="emailaddress"
                                 labelText="Fill in your email address"
+                                placeholder="Please type your email address here..."
                                 required={true}
                                 formStateValue={formState.emailaddress}
                                 handleChange={handleChange}
@@ -102,8 +105,8 @@ export default function Viewings() {
                             </div>
                             {error && <p className="error-message">Oops, something went wrong. Please try again</p>}
                         </form>
-                        : <p>Het maken van je afspraak is gelukt. Je account informatie is <Link
-                            to={`/accounts/${submitSuccessId}`}>hier</Link> te vinden</p>}
+                        : <p>Scheduling a viewing was successful. You can find calendar details <Link
+                            to={`/profile`}>here</Link></p>}
                 </div>
             </section>
         </>

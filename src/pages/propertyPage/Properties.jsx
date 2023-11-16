@@ -19,8 +19,8 @@ function Properties() {
     //         const response = await axios.patch(`http://localhost:8080/properties/${propertyId}/favorite`, isFavorite);
     //         console.log(response.data); // Updated property object with favorite status
     //         fetchProperties(); // Fetch updated properties after favorite status change
-    //     } catch (pageNotFound) {
-    //         console.pageNotFound(pageNotFound);
+    //     } catch (error) {
+    //         console.pageNotFound(error);
     //     }
     // };
 

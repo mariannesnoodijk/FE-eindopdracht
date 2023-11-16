@@ -11,6 +11,7 @@ function PropertyInfoPage() {
     const navigate = useNavigate();
     const {propertyId} = useParams(); // pakt wat achter de / wordt gezet in de url
 
+
     useEffect(() => {
         void fetchPropertyInfo();
     }, []);
@@ -43,7 +44,7 @@ function PropertyInfoPage() {
                     <div className="general-form">
                     {Object.keys(propertyInfo).length > 0 && (
                         // <div className="container-propertyinfo">
-                    // {properties.map((property) => {
+                    // {propertyPage.map((property) => {
                             <PropertyCard
                                 key={propertyInfo.propertyInfoId}
                                 // image={cardImage1}
@@ -54,8 +55,8 @@ function PropertyInfoPage() {
                             />
                         // </div>
                     )}
-                    <Button type="submit" variant="primary" onClick={() => navigate('/viewings')} >Afspraak maken</Button>
-                    <Button type="submit" variant="primary" onClick={() => navigate('/properties')}>Terug naar overzicht</Button>
+                    <Button type="submit" variant="primary" onClick={() => navigate('/viewingsPage')} >Afspraak maken</Button>
+                    <Button type="submit" variant="primary" onClick={() => navigate('/propertyPage')}>Terug naar overzicht</Button>
                     {error && <p>Er is iets misgegaan bij het ophalen van de data. Probeer het opnieuw.</p>}
                 </div>
                 </div>

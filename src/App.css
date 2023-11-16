@@ -21,8 +21,6 @@ It is allowed to shrink if screen is less wide, but not grow when more space*/
   flex-grow: 0;
 
   background-color: var(--main-color-white);
-  /*background-color: var(--main-color-medium);*/
-  /*border: 2px solid var(--main-color-white);*/
   text-align: center;
   padding: 50px 0;
   margin: 150px 0 50px 0;
@@ -40,24 +38,14 @@ It is allowed to shrink if screen is less wide, but not grow when more space*/
   background-color: var(--main-color-light);
 }
 
-
 .sub-message {
   font-weight: lighter;
   font-size: 10px;
 }
 
-.sub-message__links {
-  color: red;
-}
 .sub-message__links:hover {
   text-decoration: underline;
+  color: var(--main-color-white);
 }
-
-
-/*----------------------------- HEADER -----------------------------*/
-/*----------------------------- GLOBAL STYLES -----------------------------*/
-/*----------------------------- HEADER -----------------------------*/
-/*----------------------------- MAIN -----------------------------*/
-/*----------------------------- FOOTER -----------------------------*/
 
 
