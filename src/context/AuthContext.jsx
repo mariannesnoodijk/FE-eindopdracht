@@ -9,8 +9,8 @@ function AuthContextProvider({children}) {
     const [isAuth, toggleIsAuth] = useState({
         isAuthenticated: false,
         user: null,
-        status: 'pending',
         token: null,
+        status: 'pending',
     });
 
     useEffect(() => {
@@ -54,7 +54,7 @@ function AuthContextProvider({children}) {
                 },
                 status: 'done',
             });
-            navigate('/profile');
+            navigate('/profilePage');
         } catch (e) {
             console.error(e);
             toggleIsAuth({

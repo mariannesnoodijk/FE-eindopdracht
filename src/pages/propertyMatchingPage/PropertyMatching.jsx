@@ -42,13 +42,12 @@ function PropertyMatching() {
         () =>
             Array(slides.length)
                 .fill(0)
-                // TODO: WHAT TO REPLACE I WITH?
-                .map((i) => React.createRef()),
+                .map(() => React.createRef()),
         []
     )
 
     function handleClick() {
-        navigate('/viewingsPage')
+        navigate('/viewings')
     }
 
     const updateCurrentIndex = (val) => {

@@ -19,7 +19,8 @@
 .general-form label {
     text-align: left;
     font-size: 14px;
-    color: #595F73;
+    font-weight: lighter;
+    color: var(--main-color-dark);
 }
 
 .general-form input,
@@ -28,5 +29,5 @@
     margin: 4px 0 12px 0;
     border-radius: 6px;
     border: 1px solid #D1D3DB;
-    background-color: var(--main-color-light);
+    background-color: var(--main-color-white);
 }

@@ -56,6 +56,7 @@ export default function PostProperty() {
                                     type="text"
                                     name="address"
                                     labelText="Address"
+                                    placeholder="Please type the address of the property here..."
                                     required={true}
                                     formStateValue={formState.address}
                                     handleChange={handleChange}
@@ -64,6 +65,7 @@ export default function PostProperty() {
                                     type="text"
                                     name="price"
                                     labelText="Price"
+                                    placeholder="Please add the price of the property here..."
                                     required={true}
                                     formStateValue={formState.price}
                                     handleChange={handleChange}

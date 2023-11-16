@@ -5,7 +5,7 @@ import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
 import InteriorImage from "../../assets/otherImages/interior.jpg";
 
-export default function Viewings() {
+export default function ScheduleViewing() {
     const [formState, setFormState] = useState({
         fullname: '',
         phonenumber: '',

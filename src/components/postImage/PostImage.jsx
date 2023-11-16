@@ -47,7 +47,7 @@ function PostImage() {
                         <Input
                             type="file"
                             name="file"
-                            labelText="choose image to add"
+                            labelText="CHOOSE IMAGE TO ADD"
                             handleChange={handleImageChange}
                         />
                         <Button type="submit" onClick={handleImageSubmit} variant="primary">send</Button>

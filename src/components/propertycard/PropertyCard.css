@@ -11,8 +11,17 @@
 
 .property-card-name {
     font-weight: 300;
-    color: var(--main-color-medium);
+    background-color: var(--main-color-white);
+    color: var(--main-color-dark);
+    border: 1px solid var(--main-color-dark);
     margin: 20px 0;
+    width: 100%;
+}
+
+.property-card-price {
+    background-color: var(--main-color-medium);
+    color: var(--main-color-dark);
+    width: 100%;
 }
 
 .property-card-description {

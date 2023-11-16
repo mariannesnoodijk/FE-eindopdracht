@@ -1,11 +1,11 @@
 import React from "react";
-import "./Homepage.css";
+import "./Home.css";
 import HeroSection from "../../components/herosection/HeroSection.jsx";
 import Properties from "../propertyPage/Properties.jsx";
 import PostImage from "../../components/postImage/PostImage.jsx";
 
 
-function Homepage() {
+function Home() {
     return (
         <>
             <HeroSection/>
@@ -15,4 +15,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default Home;

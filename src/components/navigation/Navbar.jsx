@@ -1,6 +1,6 @@
 import React, {useContext, useState} from "react";
 
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./dropdown/Dropdown.jsx";
 import logo from "../../assets/favicon/PREMIUM CASAS.png";
@@ -11,11 +11,10 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import {AuthContext} from "../../context/AuthContext.jsx";
 
 function Navbar() {
-    const {isAuthenticated, logout} = useContext(AuthContext);
-
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
 
+    const {isAuthenticated, logout} = useContext(AuthContext);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);

@@ -39,14 +39,14 @@ export default Footer;
 //             <div className="footer-links-div">
 //                 <Link to="/about">About</Link>
 //                 <Link to="/about">Contact Us</Link>
-//                 <Link to="/properties">View all properties</Link>
+//                 <Link to="/propertyPage">View all propertyPage</Link>
 //             </div>
 //         </div>
 //         <div className="footer-links">
 //             <div className="footer-links-div">
 //                 <Link to="/about">About</Link>
 //                 <Link to="/about">Contact Us</Link>
-//                 <Link to="/properties">View all properties</Link>
+//                 <Link to="/propertyPage">View all propertyPage</Link>
 //             </div>
 //         </div>
 //     </div>
