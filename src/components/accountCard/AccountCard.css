@@ -1,0 +1,10 @@
+.account-card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: white;
+    padding: 16px;
+
+    flex-basis: 500px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}

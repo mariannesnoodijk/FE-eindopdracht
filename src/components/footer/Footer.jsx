@@ -31,36 +31,3 @@ function Footer() {
 }
 
 export default Footer;
-
-// <div className="footer-container">
-//     <div className="footer-container section-padding">
-//         {/*<div className="footer-top">*/}
-//         <div className="footer-links">
-//             <div className="footer-links-div">
-//                 <Link to="/about">About</Link>
-//                 <Link to="/about">Contact Us</Link>
-//                 <Link to="/propertyPage">View all propertyPage</Link>
-//             </div>
-//         </div>
-//         <div className="footer-links">
-//             <div className="footer-links-div">
-//                 <Link to="/about">About</Link>
-//                 <Link to="/about">Contact Us</Link>
-//                 <Link to="/propertyPage">View all propertyPage</Link>
-//             </div>
-//         </div>
-//     </div>
-//     <div className="footer-links">
-//         <p>Visit me on:</p>
-//         <div className="footer-icons">
-//             <NavLink to="https://www.linkedin.com/in/mariannesnoodijk/"><LinkedInIcon/></NavLink>
-//             <NavLink to="https://github.com/mariannesnoodijk"><GitHubIcon/></NavLink>
-//         </div>
-//     </div>
-//     <div className="footer-bottom">
-//         <div className="footer-copyright">
-//             <p>@{new Date().getFullYear()} All rights reserved.</p>
-//             <p>This page was built and designed by Marianne Snoodijk</p>
-//         </div>
-//     </div>
-// </div>
