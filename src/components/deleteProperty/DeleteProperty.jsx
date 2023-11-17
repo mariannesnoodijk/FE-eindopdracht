@@ -1,6 +1,7 @@
 import Button from "../button/Button.jsx";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 
 function DeleteProperty() {
     const [property, setProperty] = useState([]);
@@ -8,6 +9,7 @@ function DeleteProperty() {
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
+    const {propertyId} = useParams();
 
     useEffect(() => {
         void fetchProperties();
@@ -28,9 +30,10 @@ function DeleteProperty() {
     }
 
     async function handleSubmit(e) {
+        console.log(formState)
         e.preventDefault()
         try {
-            const response = await axios.delete(`http://localhost:8080/product/${formState}`);
+            const response = await axios.delete(`http://localhost:8080/properties/${propertyId}`);
             console.log(response)
 
             await fetchProperties()
@@ -47,7 +50,7 @@ function DeleteProperty() {
 
     return (
         <>
-            <section className="new-general-form-section outer-content-container">
+            <section className="new-general-form-section outer-content__container">
                 <div className="inner-content-container__text-restriction">
             <form onSubmit={handleSubmit}>
                 <select

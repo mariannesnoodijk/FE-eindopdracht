@@ -34,8 +34,8 @@ const {isAuth} = useContext(AuthContext);
                   <Route path="/matching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/register" element={<Register/>}/>
-                  <Route path="/profile" element={<Profile/>}/>
-                  {/*<Route path="/profile" element={isAuth ? <Profile/> : <Navigate to="/"/>}/>*/}
+                  {/*<Route path="/profile" element={<Profile/>}/>*/}
+                  <Route path="/profile" element={isAuth ? <Profile/> : <Navigate to="/"/>}/>
                   <Route path="/viewings" element={<ScheduleViewing/>}/>
                   <Route path="/viewingsoverview" element={<ViewingOverview/>}/>
                   <Route path="/favorites" element={<Favorites/>}/>

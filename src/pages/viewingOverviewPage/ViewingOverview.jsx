@@ -44,9 +44,9 @@ function ViewingOverview() {
 
     return (
       <>
-          <section className="viewing-detail-section outer-content-container">
+          <section className="viewing-detail-section outer-content__container">
               <div className="inner-content-container">
-                  <div className="general-form-top">
+                  <div className="general-form__top-section">
                       <h1>my scheduled viewings</h1>
                   </div>
                   <div className="general-form">

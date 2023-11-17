@@ -4,19 +4,21 @@
 
 .cardContainer {
     width: 90vw;
-    max-width: 260px;
-    height: 350px;
-    margin: auto;
+    align-self: center;
+}
+
+.card, .cardContainer {
+max-width: 500px;
+    height: 400px;
 }
 
 .card {
     position: relative;
+    background-color: #fff;
     width: 80vw;
-    max-width: 50%;
-    height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.04) 0 3px 5px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-size: cover;
+    background-position: 50%;
 }
 
 .cardContent {

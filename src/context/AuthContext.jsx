@@ -30,14 +30,13 @@ function AuthContextProvider({children}) {
 
     async function login(token) {
         localStorage.setItem('token', token);
-        // const userInfo = jwtDecode(token);
-        // const userId = userInfo.sub;
-        // console.log(userInfo)
-
-        const id = localStorage.getItem('id')
+        const userInfo = jwtDecode(token);
+        const userId = userInfo.sub;
+        const accountId = userInfo.accountId
+        localStorage.setItem('id', userInfo.accountId)
 
         try {
-            const response = await axios.get(`http://localhost:8080/accounts/${id}`, {
+            const response = await axios.get(`http://localhost:8080/accounts/${accountId}`, {
                 headers: {
                     "Content-Type": 'application/json',
                     Authorization: `${token}`,
@@ -51,10 +50,11 @@ function AuthContextProvider({children}) {
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
+                //     role: response.data.role,
                 },
                 status: 'done',
             });
-            navigate('/profilePage');
+            navigate('/profile');
         } catch (e) {
             console.error(e);
             toggleIsAuth({
@@ -63,7 +63,7 @@ function AuthContextProvider({children}) {
             })
         }
 
-
+        // TODO: wat betekent onderstaande ook al weer met pending? Wat doe je ermee?
         // toggleIsAuth({
         //     isAuthenticated: true,
         //     user: null,
@@ -73,7 +73,6 @@ function AuthContextProvider({children}) {
     }
 
     function logout() {
-        console.log('User is logged out!');
         toggleIsAuth({
             isAuthenticated: false,
             user: null,
@@ -84,6 +83,7 @@ function AuthContextProvider({children}) {
 
     const contextData = {
         ...isAuth,
+        isAuth: isAuth.isAuthenticated,
         user: isAuth.user,
         login: login,
         logout: logout,

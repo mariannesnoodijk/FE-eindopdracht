@@ -46,20 +46,20 @@ function Properties() {
 
     return (
         <>
-            <section className="overview-section outer-content-container">
+            <section className="property-overview__section outer-content__container">
                 <div className="inner-content-container">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <h1>property overview</h1>
                     </div>
-                    <div className="property-container">
+                    <div className="property__container">
 
                         {properties.map((property) => {
                             return (
                                 <PropertyCard
                                     key={property.propertyId}
-                                    // image={image1}
+                                    propertyId={property.propertyId}
                                     label="New in!"
-                                    title={`${property.address}`}
+                                    title={property.address}
                                     price={property.price}
                                     description={property.description}
                                 />

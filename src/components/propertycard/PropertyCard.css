@@ -9,7 +9,7 @@
     color: var(--main-color-dark);
 }
 
-.property-card-name {
+.property-card__name {
     font-weight: 300;
     background-color: var(--main-color-white);
     color: var(--main-color-dark);
@@ -18,13 +18,13 @@
     width: 100%;
 }
 
-.property-card-price {
+.property-card__price {
     background-color: var(--main-color-medium);
     color: var(--main-color-dark);
     width: 100%;
 }
 
-.property-card-description {
+.property-card__description {
     font-weight: 200;
     font-size: 16px;
     text-align: justify;

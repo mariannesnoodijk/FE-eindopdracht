@@ -1,3 +1,8 @@
 .profilepage__accountinfo {
-    color: red;
+    color: var(--main-color-dark);
+}
+
+.profilepage__buttons {
+    display: flex;
+    flex-direction: column;
 }

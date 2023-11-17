@@ -3,7 +3,7 @@ import React, {useContext, useState} from "react";
 import {Link, NavLink, useNavigate} from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./dropdown/Dropdown.jsx";
-import logo from "../../assets/favicon/premium-casas.png";
+import logo from "../../assets//premium-casas.png";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -39,24 +39,24 @@ function Navbar() {
         <>
             <nav className='navbar'>
                 <Link to='/' >
-                    <img className='navbar-logo' src={logo} alt="Company logo"/>
+                    <img className='navbar__logo' src={logo} alt="Company logo"/>
                 </Link>
-                <div className='menu-icon' onClick={handleClick}>
+                <div className='navbar-menu__icon' onClick={handleClick}>
                     {click ? <CloseIcon/> : <MenuIcon/>}
                 </div>
-                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className='nav-item'>
+                <ul className={click ? 'navbar-menu active' : 'navbar-menu'}>
+                    <li className='navbar-item'>
                         <NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
                                  onClick={closeMobileMenu}>Home</NavLink>
                     </li>
-                    <li className='nav-item'>
+                    <li className='navbar-item'>
                         <NavLink to="/properties"
                                  className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
                                  onClick={closeMobileMenu}>Properties</NavLink>
                     </li>
                     {isAuthenticated ? (
                             <>
-                                <li className='nav-item'>
+                                <li className='navbar-item'>
                                     <NavLink to="/"
                                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
                                              onClick={() => {
@@ -64,7 +64,7 @@ function Navbar() {
                                                  logout();
                                              }}>Logout</NavLink>
                                 </li>
-                                <li className='nav-item'>
+                                <li className='navbar-item'>
                                     <NavLink to="/profile"
                                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
                                              onClick={() => {
@@ -72,7 +72,7 @@ function Navbar() {
                                                  logout();
                                              }}>My profile</NavLink>
                                 </li>
-                            <li className='nav-item'>
+                            <li className='navbar-item'>
                                 <NavLink to="/favorites"
                                          className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
                                          onClick={closeMobileMenu}><FavoriteBorderOutlinedIcon/></NavLink>
@@ -80,7 +80,7 @@ function Navbar() {
                             </>
                         ) :
                             <li
-                                className='nav-item'
+                                className='navbar-item'
                                 onMouseEnter={onMouseEnter}
                                 onMouseLeave={onMouseLeave}
                             >

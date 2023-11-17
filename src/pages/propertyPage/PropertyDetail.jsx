@@ -4,6 +4,7 @@ import PropertyCard from "../../components/propertycard/PropertyCard.jsx";
 import Button from "../../components/button/Button.jsx";
 import {useNavigate, useParams} from "react-router-dom";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
+import property1 from "../../assets/img/property_1.jpg";
 
 function PropertyDetail() {
     const [error, toggleError] = useState(false);
@@ -36,16 +37,17 @@ function PropertyDetail() {
 
     return (
         <>
-            <section className="property-detail-section outer-content-container">
+            <section className="property-detail-section outer-content__container">
                 <div className="inner-content-container">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <h1>property detail</h1>
                     </div>
                     <div className="general-form">
                         {Object.keys(property).length > 0 && (
                             <>
+                                <img src={property1} alt={property.address}/>
                                 <h1>{property.address}</h1>
-                                <h2>{property.price}</h2>
+                                <h2>€ {property.price},-</h2>
                                 <p>{property.description}</p>
                             </>
                         )}

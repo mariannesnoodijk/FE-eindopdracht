@@ -86,9 +86,9 @@ function PropertyMatching() {
 
     return (
         <>
-            <section className="new-general-form-section outer-content-container">
+            <section className="prperty-matching__section outer-content__container">
                 <div className="inner-content-container__text-restriction">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <h1>Find your dream home</h1>
                     </div>
                     <div className="general-form">

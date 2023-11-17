@@ -7,7 +7,7 @@
     background-color: var(--main-color-medium);
 }
 
-.general-form-top {
+.general-form__top-section {
     background-color: var(--main-color-dark);
     color: var(--main-color-light);
     margin: auto;
@@ -28,6 +28,6 @@
     padding: 12px;
     margin: 4px 0 12px 0;
     border-radius: 6px;
-    border: 1px solid #D1D3DB;
+    border: 1px solid var(--main-color-light);
     background-color: var(--main-color-white);
 }

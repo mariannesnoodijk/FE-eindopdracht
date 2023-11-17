@@ -1,8 +1,9 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import Input from "../forms input/Input.jsx";
 import Button from "../button/Button.jsx";
+import ErrorMessage from "../errorMessage/ErrorMessage.jsx";
 
 
 function PostProperty() {
@@ -24,14 +25,18 @@ function PostProperty() {
     async function handleSubmit(e) {
         e.preventDefault();
         toggleError(false);
-        console.log({
-            ...formState
-        });
+        const token = localStorage.getItem("token")
 
         try {
             const response = await axios.post('http://localhost:8080/properties', {
-                ...formState
-            });
+                ...formState,
+            },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `${token}`
+                    }
+                });
             console.log(response.data);
 
             setSubmitSuccessId(response.data.id);
@@ -43,9 +48,9 @@ function PostProperty() {
 
     return (
         <>
-            <section className="new-general-form-section outer-content-container">
+            <section className="new-general-form-section outer-content__container">
                 <div className="inner-content-container__text-restriction">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <Link to='/'>Bring me back home</Link>
                         <h1>adding a property</h1>
                     </div>
@@ -85,7 +90,7 @@ function PostProperty() {
 
                                 <Button type="submit" variant="primary">send</Button>
 
-                                {error && <p>Something went wrong with adding a property. Please try again.</p>}
+                                {error && <ErrorMessage message="Something went wrong with adding a property. Please try again."/>}
                             </form>
                             : <p>You have successfully added a property.</p>}
                     </div>

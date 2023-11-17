@@ -37,9 +37,9 @@ function PostImage() {
 
     return (
         <>
-            <section className="overview-section outer-content-container">
+            <section className="overview-section outer-content__container">
                 <div className="inner-content-container">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <h1>send us a picture of your home</h1>
                         <p>we would love to see</p>
                     </div>

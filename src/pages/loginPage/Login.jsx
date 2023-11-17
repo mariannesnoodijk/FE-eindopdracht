@@ -46,8 +46,6 @@ function Login() {
             console.log(response);
             login(response.data);
 
-            localStorage.setItem('id', response.data.accountId)
-
         } catch (e) {
             console.error(e);
             toggleError(true);
@@ -56,9 +54,9 @@ function Login() {
 
     return (
         <>
-            <section className="new-general-form-section outer-content-container">
+            <section className="login__section outer-content__container">
                 <div className="inner-content-container__text-restriction">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <h1>Login</h1>
                     </div>
 

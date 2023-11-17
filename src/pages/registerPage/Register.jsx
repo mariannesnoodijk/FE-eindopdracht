@@ -36,17 +36,15 @@ function Register() {
             ...formState
         });
 
-        navigate('/login')
-
         try {
             const response = await axios.post('http://localhost:8080/accounts', {
                 ...formState
             });
             console.log('response', response.data);
-            // navigate('/loginPage')
+            navigate('/login')
 
             console.log(response.data.accountId);
-localStorage.setItem('id', response.data.accountId)
+            localStorage.setItem('id', response.data.accountId)
         } catch (e) {
             console.error(e);
             toggleError(true);
@@ -55,9 +53,9 @@ localStorage.setItem('id', response.data.accountId)
 
     return (
         <>
-            <section className="new-general-form-section outer-content-container">
+            <section className="new-general-form-section outer-content__container">
                 <div className="inner-content-container__text-restriction">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <h1>Register</h1>
                     </div>
                     {!submitSuccessId ?

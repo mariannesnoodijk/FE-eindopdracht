@@ -6,11 +6,11 @@ import {NavLink} from "react-router-dom";
 function Footer() {
     return (
         <>
-            <div className="footer">
-                <div className="sb__footer section__padding">
-                    <div className="sb__footer-links">
+            <div className="footer__section">
+                <div className="footer__inner-container section__padding">
+                    <div className="footer__inner-container__links">
                             <p>Visit me on:</p>
-                            <div className="socialmedia">
+                            <div className="footer__socialmedia">
                                 <p><NavLink to="https://www.linkedin.com/in/mariannesnoodijk/"><LinkedInIcon/></NavLink></p>
                                 <p><NavLink to="https://github.com/mariannesnoodijk"><GitHubIcon/></NavLink></p>
                             </div>
@@ -18,8 +18,8 @@ function Footer() {
 
                     <hr></hr>
 
-                    <div className="sb__footer-below">
-                        <div className="sb__footer-copyright">
+                    <div className="footer__inner-container__below">
+                        <div className="footer__copyright">
                             <p>@{new Date().getFullYear()} All rights reserved.</p>
                             <p>This page was built and designed by Marianne Snoodijk</p>
                         </div>

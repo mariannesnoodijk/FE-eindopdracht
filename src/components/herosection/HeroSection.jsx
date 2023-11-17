@@ -15,7 +15,7 @@ const navigate = useNavigate()
 
     return (
         <>
-            <div className="hero-container">
+            <div className="hero-section__container">
                 <h1> FIND YOUR DREAM HOME </h1>
                 <p> What are you waiting for? </p>
                 <div>

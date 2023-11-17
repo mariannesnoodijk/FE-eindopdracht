@@ -7,9 +7,10 @@ import InteriorImage from "../../assets/img/interior_1.jpg";
 
 function ScheduleViewing() {
     const [formState, setFormState] = useState({
+        accountId: '',
         fullname: '',
         phonenumber: '',
-        emailaddress: '',
+        email: '',
         date: '',
         time: '',
     });
@@ -45,9 +46,9 @@ function ScheduleViewing() {
 
     return (
         <>
-            <section className="new-general-form-section outer-content-container">
+            <section className="new-general-form-section outer-content__container">
                 <div className="inner-content-container__text-restriction">
-                    <div className="general-form-top">
+                    <div className="general-form__top-section">
                         <Link to='/'>Bring me back home</Link>
                         <h1>schedule your viewing</h1>
                     </div>
@@ -55,6 +56,15 @@ function ScheduleViewing() {
                     {!submitSuccessId ?
                         <form className="general-form" onSubmit={handleSubmit}>
                             <img src={InteriorImage} alt="Image of the interior of a home"/>
+                            {/*<Input*/}
+                            {/*    type="number"*/}
+                            {/*    name="accountId"*/}
+                            {/*    labelText="What is your account id?"*/}
+                            {/*    placeholder="Please type your account id here..."*/}
+                            {/*    required={true}*/}
+                            {/*    formStateValue={formState.accountId}*/}
+                            {/*    handleChange={handleChange}*/}
+                            {/*/>*/}
                             <Input
                                 type="text"
                                 name="fullname"
@@ -75,11 +85,11 @@ function ScheduleViewing() {
                             />
                             <Input
                                 type="email"
-                                name="emailaddress"
+                                name="email"
                                 labelText="Fill in your email address"
                                 placeholder="Please type your email address here..."
                                 required={true}
-                                formStateValue={formState.emailaddress}
+                                formStateValue={formState.email}
                                 handleChange={handleChange}
                             />
                             <Input
