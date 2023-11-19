@@ -50,7 +50,7 @@ function AuthContextProvider({children}) {
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
-                //     role: response.data.role,
+                    rolename: response.data.rolename,
                 },
                 status: 'done',
             });

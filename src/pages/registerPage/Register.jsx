@@ -16,7 +16,7 @@ function Register() {
         // role: '',
         // role: [], __> check wat in back staat!
     });
-    const [submitSuccessId, setSubmitSuccessId] = useState(null);
+    const [submitSuccessful, setSubmitSuccessful] = useState(null);
     const [error, toggleError] = useState(false)
 
     const navigate = useNavigate()
@@ -58,13 +58,13 @@ function Register() {
                     <div className="general-form__top-section">
                         <h1>Register</h1>
                     </div>
-                    {!submitSuccessId ?
+                    {!submitSuccessful ?
                         <form className="general-form" onSubmit={handleSubmit}>
-                            {/*<div className="general-form-img">*/}
-                            <img src={InteriorImage} alt="Image of the interior of a home"/>
+                            {/*<div className="general-form__right-side">*/}
                             {/*</div>*/}
-                            {/*<div className="general-form-input">*/}
-                            <h1>welcome</h1>
+                            <div className="general-form__left-side">
+                                <h1>welcome</h1>
+                                {/*<div className="general-form__input">*/}
                             <Input
                                 type="text"
                                 name="firstname"
@@ -110,30 +110,15 @@ function Register() {
                                 formStateValue={formState.password}
                                 handleChange={handleChange}
                             />
-                            {/*<Input*/}
-                            {/*    type="radio"*/}
-                            {/*    name="role"*/}
-                            {/*    labelText="admin"*/}
-                            {/*    required={true}*/}
-                            {/*    formStateValue="ADMIN"*/}
-                            {/*    handleChange={handleChange}*/}
-                            {/*/>*/}
-                            {/*<Input*/}
-                            {/*    type="radio"*/}
-                            {/*    name="role"*/}
-                            {/*    labelText="user"*/}
-                            {/*    required={true}*/}
-                            {/*    formStateValue="USER"*/}
-                            {/*    handleChange={handleChange}*/}
-                            {/*/>*/}
-
                             <Button type="submit" variant="primary">register</Button>
                             <div className="sub-message">
                             <p>Do you already have an account with us? <Link to="/login">Try logging in</Link></p>
                                 <p><Link to='/'>Bring me back home</Link></p>
                             </div>
                             {error && <ErrorMessage message="Your registration was unsuccessful. Please try again."/>}
-                            {/*</div>*/}
+                            </div>
+                                <img className="general-form__image" src={InteriorImage}
+                                     alt="Image of the interior of a home"/>
                         </form>
                             : <p>Your registration was successful.</p>}
 

@@ -1,9 +1,9 @@
 import React, {useContext, useState} from "react";
 
-import {Link, NavLink, useNavigate} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./dropdown/Dropdown.jsx";
-import logo from "../../assets//premium-casas.png";
+import logo from "../../assets/logo.png";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -69,7 +69,7 @@ function Navbar() {
                                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
                                              onClick={() => {
                                                  closeMobileMenu();
-                                                 logout();
+                                                 // logout();
                                              }}>My profile</NavLink>
                                 </li>
                             <li className='navbar-item'>

@@ -15,6 +15,7 @@
   /*--main-color-light: #F5F5F5;*/
   --main-color-white: #FFFFFF;
   --main-color-medium: #D5CCBB;
+  --main-color-less-dark: #525252;
   --main-color-dark: #2E2E2E;
 }
 
@@ -46,6 +47,7 @@ h1 {
   font-size: 3.4em;
   line-height: 1.1;
   margin-block: 1em;
+  text-transform: uppercase;
 }
 
 h2 {

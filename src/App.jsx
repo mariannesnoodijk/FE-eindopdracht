@@ -9,7 +9,7 @@ import Favorites from "./pages/favoritePage/Favorites.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import Navbar from "./components/navigation/Navbar.jsx";
 import ScheduleViewing from "./pages/scheduleViewingPage/ScheduleViewing.jsx";
-import PostProperty from "./components/postProperty/PostProperty.jsx";
+import PostProperty from "./pages/postPropertyPage/PostProperty.jsx";
 import Properties from "./pages/propertyPage/Properties.jsx";
 import Profile from "./pages/profilePage/Profile.jsx";
 import PropertyMatching from "./pages/propertyMatchingPage/PropertyMatching.jsx";
@@ -17,6 +17,7 @@ import PropertyInfoPage from "./pages/propertyPage/PropertyDetail.jsx";
 import {useContext} from "react";
 import {AuthContext} from "./context/AuthContext.jsx";
 import ViewingOverview from "./pages/viewingOverviewPage/ViewingOverview.jsx";
+import InMemoryOf from "./pages/hidden/inMemoryOf.jsx";
 
 
 
@@ -39,6 +40,7 @@ const {isAuth} = useContext(AuthContext);
                   <Route path="/viewings" element={<ScheduleViewing/>}/>
                   <Route path="/viewingsoverview" element={<ViewingOverview/>}/>
                   <Route path="/favorites" element={<Favorites/>}/>
+                  <Route path="/jair" element={<InMemoryOf/>}/>
                   <Route path="*" element={<PageNotFound/>}/>
               </Routes>
               <Footer/>

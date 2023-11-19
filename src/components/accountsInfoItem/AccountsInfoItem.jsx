@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function AccountCard({account}) {
+function AccountsInfoItem({account}) {
 
     return (
         <>
@@ -11,9 +11,10 @@ function AccountCard({account}) {
                 <p>Last name: {account.lastname}</p>
                 <p>Email address: {account.email}</p>
                 <p>Username: {account.username}</p>
+                <p>Rolename: {account.rolename}</p>
             </li>
         </>
     );
 }
 
-export default AccountCard;
+export default AccountsInfoItem;

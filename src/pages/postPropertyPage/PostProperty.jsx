@@ -1,9 +1,10 @@
 import {useContext, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import Input from "../forms input/Input.jsx";
-import Button from "../button/Button.jsx";
-import ErrorMessage from "../errorMessage/ErrorMessage.jsx";
+import Input from "../../components/forms input/Input.jsx";
+import Button from "../../components/button/Button.jsx";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
+import Image from "../../assets/img/interior_2.jpg";
 
 
 function PostProperty() {
@@ -12,7 +13,7 @@ function PostProperty() {
         price: '',
         description: '',
     });
-    const [submitSuccessId, setSubmitSuccessId] = useState(null);
+    const [submitSuccessful, setSubmitSuccessful] = useState(null);
     const [error, toggleError] = useState(false)
 
     function handleChange(e) {
@@ -55,8 +56,10 @@ function PostProperty() {
                         <h1>adding a property</h1>
                     </div>
 
-                        {!submitSuccessId ?
+                        {!submitSuccessful ?
                             <form className="general-form" onSubmit={handleSubmit}>
+                                <div className="general-form__left-side">
+                                    <h1>please add property info</h1>
                                 <Input
                                     type="text"
                                     name="address"
@@ -91,6 +94,9 @@ function PostProperty() {
                                 <Button type="submit" variant="primary">send</Button>
 
                                 {error && <ErrorMessage message="Something went wrong with adding a property. Please try again."/>}
+                                </div>
+                                <img className="general-form__image" src={Image}
+                                     alt="Image of a yellow door"/>
                             </form>
                             : <p>You have successfully added a property.</p>}
                     </div>

@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import Input from "../../components/forms input/Input.jsx";
 import Button from "../../components/button/Button.jsx";
-import InteriorImage from "../../assets/img/interior_1.jpg";
+import InteriorImage from "../../assets/img/interior_2.jpg";
 
 function ScheduleViewing() {
     const [formState, setFormState] = useState({
@@ -14,7 +14,7 @@ function ScheduleViewing() {
         date: '',
         time: '',
     });
-    const [submitSuccessId, setSubmitSuccessId] = useState(null);
+    const [submitSuccessful, setSubmitSuccessful] = useState(null);
     const [error, toggleError] = useState(false)
 
     function handleChange(e) {
@@ -53,9 +53,11 @@ function ScheduleViewing() {
                         <h1>schedule your viewing</h1>
                     </div>
 
-                    {!submitSuccessId ?
+                    {!submitSuccessful ?
                         <form className="general-form" onSubmit={handleSubmit}>
-                            <img src={InteriorImage} alt="Image of the interior of a home"/>
+                            {/*<div className="general-form__right-side">*/}
+                            {/*</div>*/}
+                            <div className="general-form__left-side">
                             {/*<Input*/}
                             {/*    type="number"*/}
                             {/*    name="accountId"*/}
@@ -108,12 +110,16 @@ function ScheduleViewing() {
                                 formStateValue={formState.time}
                                 handleChange={handleChange}
                             />
-
+                                <div className="general-form__button">
                             <Button type="submit" variant="primary">send</Button>
+                                </div>
                             <div className="sub-message">
                             <p><Link to='/'>Bring me back home</Link></p>
                             </div>
                             {error && <p className="error-message">Oops, something went wrong. Please try again</p>}
+                            </div>
+                            <img className="general-form__image" src={InteriorImage}
+                                 alt="Image of the interior of a home"/>
                         </form>
                         : <p>Scheduling a viewing was successful. You can find calendar details <Link
                             to={`/profile`}>here</Link></p>}

@@ -11,29 +11,34 @@
     justify-self: start;
     cursor: pointer;
     text-decoration: none;
-    width: 80px;
+    width: 85px;
 }
 
 .navbar-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 10px;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*grid-gap: 15px;*/
     list-style: none;
     text-align: center;
-    width: 70vw;
+    width: 75vw;
     justify-content: end;
-    margin-right: 2rem;
 }
 
 .navbar-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 80px;
+    margin: 0 40px 0 40px;
 }
 
 .active-link {
     border-bottom: 3px solid var(--main-color-medium);
     transition: width .35s ease-in-out;
+    padding: 0 10px 0 10px;
+    text-align: center;
 }
 
 .default-link {
@@ -77,11 +82,15 @@
     }
 
     .navbar-menu.active {
-        background: var(--main-color-medium);
+        background: var(--main-color-dark);
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
+    }
+
+    .active-link {
+
     }
 
     .default-link {
@@ -94,6 +103,7 @@
     .default-link:hover {
         background-color: var(--main-color-medium);
         border-radius: 0;
+        color: var(--main-color-dark);
     }
 
     .navbar-menu__icon {

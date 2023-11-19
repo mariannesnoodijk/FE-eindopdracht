@@ -43,17 +43,21 @@ function PropertyDetail() {
                         <h1>property detail</h1>
                     </div>
                     <div className="general-form">
+                        {/*<div className="general-form__right-side">*/}
+                        {/*</div>*/}
                         {Object.keys(property).length > 0 && (
                             <>
-                                <img src={property1} alt={property.address}/>
+                                <img className="general-form__image" src={property1} alt={property.address}/>
+                        <div className="general-form__left-side">
                                 <h1>{property.address}</h1>
                                 <h2>€ {property.price},-</h2>
                                 <p>{property.description}</p>
-                            </>
-                        )}
                         <Button type="button" variant="primary" onClick={() => navigate('/viewings')}>Plan your viewing</Button>
                         <Button type="button" variant="primary" onClick={() => navigate('/properties')}>Back to properties</Button>
                         {error && <ErrorMessage message="Something went wrong fetching your data. Please try again."/>}
+                        </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </section>

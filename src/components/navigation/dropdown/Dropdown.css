@@ -1,5 +1,5 @@
 .dropdown-menu {
-    width: 200px;
+    width: 150px;
     position: absolute;
     top: 80px;
     list-style: none;
@@ -10,6 +10,7 @@
     background: var(--main-color-dark);
     cursor: pointer;
     margin: 3px;
+    right: 0;
 }
 
 .dropdown-menu.clicked {

@@ -5,7 +5,7 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import "./Profile.css";
 import DeleteProperty from "../../components/deleteProperty/DeleteProperty.jsx";
 import {AuthContext} from "../../context/AuthContext.jsx";
-import AccountCard from "../../components/accountCard/AccountCard.jsx";
+import AccountsInfoItem from "../../components/accountsInfoItem/AccountsInfoItem.jsx";
 
 function Profile() {
     const [error, toggleError] = useState(false);
@@ -77,12 +77,13 @@ function Profile() {
                     return (
                     <>
                         <section className="profilepage__accountinfo">
-                            <h1>Welcome {profileData.firstname}</h1>
+                            <h1 className="profilepage__welcome-message">Welcome {profileData.firstname}</h1>
                             <h2>Accountinformation:</h2>
                             <p key={profileData.id}>First name: {profileData.firstname}</p>
                             <p>Last name: {profileData.lastname}</p>
                             <p>Email: {profileData.email}</p>
                             <p>Username: {profileData.username}</p>
+                            <p>Rolename: {profileData.rolename}</p>
                         </section>
                         <section className="profilepage__accountinfo">
                             <div className="profilepage__buttons">
@@ -97,7 +98,7 @@ function Profile() {
                                 <>
                                 <p>All accounts:</p>
                                     {accounts.map((account) => {
-                                        return (<AccountCard key={account.accountId} account={account}/>)
+                                        return (<AccountsInfoItem key={account.accountId} account={account}/>)
                                         ;
                                     })};
                                 </>

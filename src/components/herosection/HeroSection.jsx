@@ -16,9 +16,9 @@ const navigate = useNavigate()
     return (
         <>
             <div className="hero-section__container">
-                <h1> FIND YOUR DREAM HOME </h1>
-                <p> What are you waiting for? </p>
-                <div>
+                <h1> find your dream home </h1>
+                <p> what are you waiting for? </p>
+                <div className="hero-section__button">
                         <Button type="submit" variant="primary" onClick={handleClick}>match me</Button>
                 </div>
             </div>

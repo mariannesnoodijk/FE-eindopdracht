@@ -10,17 +10,21 @@
 }
 
 .property-card__name {
-    font-weight: 300;
+    font-weight: lighter;
+    font-size: 20px;
     background-color: var(--main-color-white);
     color: var(--main-color-dark);
     border: 1px solid var(--main-color-dark);
-    margin: 20px 0;
+    margin: 0 10px;
+    padding: 0 5px;
     width: 100%;
 }
 
 .property-card__price {
     background-color: var(--main-color-medium);
     color: var(--main-color-dark);
+    margin: 0 10px;
+    padding: 0 5px;
     width: 100%;
 }
 
@@ -28,6 +32,7 @@
     font-weight: 200;
     font-size: 16px;
     text-align: justify;
+    padding: 0 5px;
 }
 
 .property-card img {
