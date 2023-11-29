@@ -10,10 +10,10 @@ import Footer from "./components/footer/Footer.jsx";
 import Navbar from "./components/navigation/Navbar.jsx";
 import ScheduleViewing from "./pages/scheduleViewingPage/ScheduleViewing.jsx";
 import PostProperty from "./pages/postPropertyPage/PostProperty.jsx";
-import Properties from "./pages/propertyPage/Properties.jsx";
+import Properties from "./pages/propertiesPage/Properties.jsx";
 import Profile from "./pages/profilePage/Profile.jsx";
 import PropertyMatching from "./pages/propertyMatchingPage/PropertyMatching.jsx";
-import PropertyInfoPage from "./pages/propertyPage/PropertyDetail.jsx";
+import PropertyInfoPage from "./pages/propertyDetailPage/PropertyDetail.jsx";
 import {useContext, useEffect, useState} from "react";
 import {AuthContext} from "./context/AuthContext.jsx";
 import ViewingOverview from "./pages/viewingOverviewPage/ViewingOverview.jsx";
@@ -37,7 +37,7 @@ useEffect(() => {
               <Routes>
                   <Route path="/" element={<Home/>}/>
                   <Route path="/properties" element={role !== 'USER' ? <Properties/> : <Navigate to="/"/>}/>
-                  <Route path="/addingAProperty" element={<PostProperty/>}/>
+                  <Route path="/addingAProperty" element={isAuthenticated ? <PostProperty/> : <ErrorMessageAuth/>}/>
                   <Route path="/properties/:propertyId" element={<PropertyInfoPage/>}/>
                   <Route path="/matching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>

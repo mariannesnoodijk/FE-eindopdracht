@@ -1,6 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
 import axios from "axios";
-import PropertyCard from "../../components/propertycard/PropertyCard.jsx";
 import Button from "../../components/button/Button.jsx";
 import {useNavigate, useParams} from "react-router-dom";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
@@ -12,6 +11,7 @@ function PropertyDetail() {
     const [loading, toggleLoading] = useState(false);
     const [property, setProperty] = useState([]);
     const [deleteThisProperty, setDeleteThisProperty] = useState('');
+    const [showConfirmation, toggleShowConfirmation] = useState(false);
     const {role} = useContext(AuthContext);
 
     const navigate = useNavigate();
@@ -48,6 +48,7 @@ function PropertyDetail() {
             });
             setDeleteThisProperty(response.data);
             console.log('This property is now deleted')
+            toggleShowConfirmation(true);
         } catch (e) {
             console.error(e);
             toggleError(true);
@@ -70,12 +71,16 @@ function PropertyDetail() {
                                 <h2>€ {property.price},-</h2>
                                 <p>{property.description}</p>
                             {role === 'ADMIN' ?
-                                <Button type="button" onClick={deleteProperty} variant="primary">Delete my
-                                    account</Button>
+                                <>
+                                <Button type="button" onClick={deleteProperty} variant="primary">Delete this property</Button>
+                                {showConfirmation && (
+                                    <ErrorMessage message="This property has been deleted."/>
+                                )}
+                                </>
                                 :
                             <Button type="button" variant="primary" onClick={() => navigate('/viewings')}>Plan your viewing</Button>
                             }
-                        <Button type="button" variant="primary" onClick={() => navigate('/properties')}>Back to properties</Button>
+                        <Button type="button" variant="primary" onClick={() => navigate('/properties')}>Back to properties overviewpage</Button>
                         {error && <ErrorMessage message="Something went wrong fetching your data. Please try again."/>}
                         </div>
                             </>
