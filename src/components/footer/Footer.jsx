@@ -11,8 +11,8 @@ function Footer() {
                     <div className="footer__inner-container__links">
                             <p>Visit me on:</p>
                             <div className="footer__socialmedia">
-                                <p><NavLink to="https://www.linkedin.com/in/mariannesnoodijk/"><LinkedInIcon/></NavLink></p>
-                                <p><NavLink to="https://github.com/mariannesnoodijk"><GitHubIcon/></NavLink></p>
+                                <p><NavLink to="https://www.linkedin.com/in/mariannesnoodijk/" target="_blank"><LinkedInIcon/></NavLink></p>
+                                <p><NavLink to="https://github.com/mariannesnoodijk" target="_blank"><GitHubIcon/></NavLink></p>
                             </div>
                     </div>
 

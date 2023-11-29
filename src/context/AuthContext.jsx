@@ -10,20 +10,26 @@ function AuthContextProvider({children}) {
         isAuthenticated: false,
         user: null,
         token: null,
+        role: null,
         status: 'pending',
     });
 
     useEffect(() => {
         const token = localStorage.getItem('token');
 
-        if (token) {
-            void login(token);
-        } else {
-            toggleIsAuth({
-                ...isAuth,
-                status: 'done',
-            });
-        }
+        const fetchData = async () => {
+            if (token) {
+                await login(token);
+            } else {
+                toggleIsAuth({
+                    isAuthenticated: false,
+                    user: null,
+                    role: null,
+                    status: 'done',
+                });
+            }
+        };
+        void fetchData();
     }, []);
 
     const navigate = useNavigate();
@@ -31,9 +37,10 @@ function AuthContextProvider({children}) {
     async function login(token) {
         localStorage.setItem('token', token);
         const userInfo = jwtDecode(token);
-        const userId = userInfo.sub;
+        console.log(userInfo)
+        // const userId = userInfo.sub;
         const accountId = userInfo.accountId
-        localStorage.setItem('id', userInfo.accountId)
+        // localStorage.setItem('id', userInfo.accountId)
 
         try {
             const response = await axios.get(`http://localhost:8080/accounts/${accountId}`, {
@@ -42,15 +49,15 @@ function AuthContextProvider({children}) {
                     Authorization: `${token}`,
                 }
             });
-            console.log(response);
+            console.log('response', response);
 
             toggleIsAuth({
                 isAuthenticated: true,
                 user: {
                     username: response.data.username,
                     email: response.data.email,
-                    id: response.data.id,
-                    rolename: response.data.rolename,
+                    id: response.data.accountId,
+                    role: userInfo.role[0].authority,
                 },
                 status: 'done',
             });
@@ -76,6 +83,7 @@ function AuthContextProvider({children}) {
         toggleIsAuth({
             isAuthenticated: false,
             user: null,
+            role: "",
             status: 'done',
         });
         navigate('/');

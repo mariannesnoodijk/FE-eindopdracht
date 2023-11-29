@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import Button from "../button/Button.jsx";
 import "./PropertyCard.css";
 import property1 from "../../assets/img/property_1.jpg";
 import axios from "axios";
+import {AuthContext} from "../../context/AuthContext.jsx";
 
 function PropertyCard({ image, title, price, description, propertyId }) {
     const [error, toggleError] = useState(false);
     const [property, setProperty] = useState();
     const navigate = useNavigate();
+    const {role} = useContext(AuthContext);
 
     async function deleteProperty() {
         console.log(propertyId)
@@ -28,9 +30,9 @@ function PropertyCard({ image, title, price, description, propertyId }) {
                 <h4 className="property-card__price">€ {price},-</h4>
                 <p className="property-card__description">{description}</p>
                 <Button type="button" variant="primary" onClick={() => navigate(`/properties/${propertyId}`)}>more info</Button>
-                {/*{user.role === admin &&*/}
+                {role === 'ADMIN' && (
                 <Button type="button" onClick={deleteProperty}>Delete property</Button>
-                {/*}*/}
+                    )}
             </article>
         );
     }

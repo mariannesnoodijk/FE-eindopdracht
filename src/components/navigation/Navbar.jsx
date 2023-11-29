@@ -14,7 +14,7 @@ function Navbar() {
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
 
-    const {isAuthenticated, logout} = useContext(AuthContext);
+    const {isAuthenticated, logout, user} = useContext(AuthContext);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);

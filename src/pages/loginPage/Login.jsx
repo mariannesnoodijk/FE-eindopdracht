@@ -12,11 +12,12 @@ function Login() {
     const [formState, setFormState] = useState({
         username: '',
         password: '',
-        rolename: '',
+        // role: '',
     });
     const [submitSuccessful, setSubmitSuccessful] = useState(null);
     const [loading, toggleLoading] = useState(false);
     const [error, toggleError] = useState(false);
+    const {login} = useContext(AuthContext);
 
 
     useEffect(() => {
@@ -47,7 +48,7 @@ function Login() {
             const response = await axios.post('http://localhost:8080/auth', {
                 username: formState.username,
                 password: formState.password,
-                rolename: formState.rolename,
+                // role: formState.role,
             });
             console.log(response);
             login(response.data);
@@ -68,11 +69,8 @@ function Login() {
 
                     {!submitSuccessful ?
                         <form className="general-form" onSubmit={handleSubmit}>
-                            {/*<div className="general-form__right-side">*/}
-                            {/*</div>*/}
                             <div className="general-form__left-side">
                                 <h1>welcome back</h1>
-                                {/*<div className="general-form__input">*/}
                                 <Input
                                     type="text"
                                     name="username"
@@ -89,22 +87,6 @@ function Login() {
                                     placeholder="Please type your password here..."
                                     required={true}
                                     formStateValue={formState.password}
-                                    handleChange={handleChange}
-                                />
-                                <Input
-                                    type="radio"
-                                    name="role"
-                                    labelText="admin"
-                                    required={true}
-                                    formStateValue="ADMIN"
-                                    handleChange={handleChange}
-                                />
-                                <Input
-                                    type="radio"
-                                    name="role"
-                                    labelText="user"
-                                    required={true}
-                                    formStateValue="USER"
                                     handleChange={handleChange}
                                 />
                                 <div className="general-form__button">

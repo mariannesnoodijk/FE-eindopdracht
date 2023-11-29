@@ -2,7 +2,7 @@ import Button from "../../components/button/Button.jsx";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 
 function ViewingOverview() {
@@ -60,7 +60,11 @@ function ViewingOverview() {
                       {/*<Button type="submit" variant="primary" onClick={() => navigate('/viewings')}>Plan your viewing</Button>*/}
                       {/*<Button type="submit" variant="primary" onClick={() => navigate('/properties')}>Back to properties</Button>*/}
                       {/*{error && <ErrorMessage message="Something went wrong fetching your data. Please try again."/>}*/}
+
                       <Button type="button" onClick={deleteViewing}>Delete viewing</Button>
+                      <div className="sub-message">
+                          <p><Link className="sub-message__links" to='/profile'>Take me to the previous page</Link></p>
+                      </div>
                   </div>
               </div>
           </section>

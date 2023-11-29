@@ -91,7 +91,7 @@ function PropertyMatching() {
                     <div className="general-form__top-section">
                         <h1>Find your dream home</h1>
                     </div>
-                    <div className="general-form">
+                    <div className="general-form tindercards">
                         <div className="cardContainer">
                             {slides.map((character, index) => (
                                 <TinderCard

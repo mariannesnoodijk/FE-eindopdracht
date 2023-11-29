@@ -6,3 +6,7 @@
     display: flex;
     flex-direction: column;
 }
+
+.profile-page__sub-message {
+    background-color: var(--main-color-dark);
+}

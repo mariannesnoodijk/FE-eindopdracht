@@ -14,32 +14,38 @@ import Properties from "./pages/propertyPage/Properties.jsx";
 import Profile from "./pages/profilePage/Profile.jsx";
 import PropertyMatching from "./pages/propertyMatchingPage/PropertyMatching.jsx";
 import PropertyInfoPage from "./pages/propertyPage/PropertyDetail.jsx";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {AuthContext} from "./context/AuthContext.jsx";
 import ViewingOverview from "./pages/viewingOverviewPage/ViewingOverview.jsx";
 import InMemoryOf from "./pages/hidden/inMemoryOf.jsx";
+import ErrorMessageAuth from "./components/errorMessageAuth/ErrorMessageAuth.jsx";
 
 
 
 function App() {
-const {isAuth} = useContext(AuthContext);
+const {isAuthenticated, user} = useContext(AuthContext);
+const [role , setRole] = useState("");
+useEffect(() => {
+    if (user) {
+    setRole(user.role)
+    }
+}, [user]);
 
   return (
       <>
               <Navbar/>
               <Routes>
                   <Route path="/" element={<Home/>}/>
-                  <Route path="/properties" element={<Properties/>}/>
+                  <Route path="/properties" element={role !== 'USER' ? <Properties/> : <Navigate to="/"/>}/>
                   <Route path="/addingAProperty" element={<PostProperty/>}/>
                   <Route path="/properties/:propertyId" element={<PropertyInfoPage/>}/>
                   <Route path="/matching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/register" element={<Register/>}/>
-                  {/*<Route path="/profile" element={<Profile/>}/>*/}
-                  <Route path="/profile" element={isAuth ? <Profile/> : <Navigate to="/"/>}/>
+                  <Route path="/profile" element={isAuthenticated ? <Profile/> : <Navigate to="/"/>}/>
                   <Route path="/viewings" element={<ScheduleViewing/>}/>
-                  <Route path="/viewingsoverview" element={<ViewingOverview/>}/>
-                  <Route path="/favorites" element={<Favorites/>}/>
+                  <Route path="/viewingsoverview" element={isAuthenticated ? <ViewingOverview/> : <ErrorMessageAuth/>}/>
+                  <Route path="/favorites" element={isAuthenticated ? <Favorites/> : <ErrorMessageAuth/>}/>
                   <Route path="/jair" element={<InMemoryOf/>}/>
                   <Route path="*" element={<PageNotFound/>}/>
               </Routes>

@@ -39,6 +39,7 @@ It is allowed to shrink if screen is less wide, but not grow when more space*/
 .sub-message {
   font-weight: lighter;
   font-size: 10px;
+  text-align: center;
 }
 
 .sub-message__links:hover {

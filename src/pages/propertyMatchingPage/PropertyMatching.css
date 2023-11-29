@@ -2,6 +2,11 @@
     position: absolute;
 }
 
+.tindercards {
+    display: flex;
+    flex-direction: column;
+}
+
 .cardContainer {
     width: 90vw;
     align-self: center;

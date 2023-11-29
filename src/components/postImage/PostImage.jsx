@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useState} from "react";
+import "./PostImage.css";
 import Input from "../forms input/Input.jsx";
 import Button from "../button/Button.jsx";
 
@@ -43,7 +44,7 @@ function PostImage() {
                         <h1>send us a picture of your home</h1>
                         <p>we would love to see</p>
                     </div>
-                    <form className="general-form" onSubmit={handleSubmit}>
+                    <form className="general-form posting-image" onSubmit={handleSubmit}>
                         <Input
                             type="file"
                             name="file"
