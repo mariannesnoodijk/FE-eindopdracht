@@ -1,7 +1,6 @@
 import React from "react";
 import "./AccountsInfoItem.css";
 
-
 function AccountsInfoItem({account}) {
 
     return (

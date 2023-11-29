@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import axios from "axios";
 import Input from "../../components/forms input/Input.jsx";
 import {Link} from "react-router-dom";
@@ -12,23 +12,13 @@ function Login() {
     const [formState, setFormState] = useState({
         username: '',
         password: '',
-        // role: '',
     });
     const [submitSuccessful, setSubmitSuccessful] = useState(null);
     const [loading, toggleLoading] = useState(false);
     const [error, toggleError] = useState(false);
     const {login} = useContext(AuthContext);
 
-
-    useEffect(() => {
-        // handleSubmit()
-    }, []);
-
-    // const {login} = useContext(AuthContext);
-    // const {user} = useContext(AuthContext);
-    // console.log(user.rolename)
     const navigate = useNavigate();
-
 
     function handleChange(e) {
         setFormState({
@@ -37,20 +27,14 @@ function Login() {
         })
     }
 
-
     async function handleSubmit(e) {
         e.preventDefault();
-        console.log('form', {
-            ...formState
-        });
 
         try {
             const response = await axios.post('http://localhost:8080/auth', {
                 username: formState.username,
                 password: formState.password,
-                // role: formState.role,
             });
-            console.log(response);
             login(response.data);
 
         } catch (e) {

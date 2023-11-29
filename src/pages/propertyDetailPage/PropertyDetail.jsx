@@ -74,7 +74,7 @@ function PropertyDetail() {
                                 <>
                                 <Button type="button" onClick={deleteProperty} variant="primary">Delete this property</Button>
                                 {showConfirmation && (
-                                    <ErrorMessage message="This property has been deleted."/>
+                                    <ErrorMessage message="This property has now been deleted."/>
                                 )}
                                 </>
                                 :

@@ -57,8 +57,9 @@ function AuthContextProvider({children}) {
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.accountId,
-                    role: userInfo.role[0].authority,
+
                 },
+                role: response.data.role,
                 status: 'done',
             });
             navigate('/profile');
@@ -70,6 +71,7 @@ function AuthContextProvider({children}) {
             })
         }
 
+
         // TODO: wat betekent onderstaande ook al weer met pending? Wat doe je ermee?
         // toggleIsAuth({
         //     isAuthenticated: true,
@@ -78,7 +80,6 @@ function AuthContextProvider({children}) {
         //     token: token,
         // })
     }
-
     function logout() {
         toggleIsAuth({
             isAuthenticated: false,

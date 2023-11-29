@@ -11,14 +11,14 @@ function Properties() {
 
     useEffect(() => {
         fetchProperties()
-    }, []); // Fetch propertyPage when the component mounts
+    }, []); // Fetch propertiesPage when the component mounts
 
 
     // const handleFavoriteToggle = async (propertyId, isFavorite) => {
     //     try {
     //         const response = await axios.patch(`http://localhost:8080/properties/${propertyId}/favorite`, isFavorite);
     //         console.log(response.data); // Updated property object with favorite status
-    //         fetchProperties(); // Fetch updated propertyPage after favorite status change
+    //         fetchProperties(); // Fetch updated propertiesPage after favorite status change
     //     } catch (error) {
     //         console.pageNotFound(error);
     //     }
