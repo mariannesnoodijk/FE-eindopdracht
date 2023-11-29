@@ -69,7 +69,6 @@ function Navbar() {
                                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}
                                              onClick={() => {
                                                  closeMobileMenu();
-                                                 // logout();
                                              }}>My profile</NavLink>
                                 </li>
                             <li className='navbar-item'>
