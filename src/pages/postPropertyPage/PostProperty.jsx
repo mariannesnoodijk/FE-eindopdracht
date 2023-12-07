@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import Input from "../../components/forms input/Input.jsx";
@@ -38,9 +38,7 @@ function PostProperty() {
                         Authorization: `${token}`
                     }
                 });
-            console.log(response.data);
-
-            setSubmitSuccessId(response.data.id);
+            setSubmitSuccessful(response.data.id);
         } catch (e) {
             console.error(e);
             toggleError(true);
