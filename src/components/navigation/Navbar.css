@@ -17,9 +17,6 @@
 .navbar-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*grid-gap: 15px;*/
     list-style: none;
     text-align: center;
     width: 75vw;
@@ -43,7 +40,7 @@
 
 .default-link {
     border-bottom: 3px solid transparent;
-    color: white;
+    color: var(--main-color-white);
     text-decoration: none;
     padding: 0 10px 0 10px;
 }
