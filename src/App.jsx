@@ -36,9 +36,9 @@ useEffect(() => {
               <Navbar/>
               <Routes>
                   <Route path="/" element={<Home/>}/>
-                  <Route path="/properties" element={role !== 'USER' ? <Properties/> : <Navigate to="/"/>}/>
-                  <Route path="/addingAProperty" element={isAuthenticated ? <PostProperty/> : <ErrorMessageAuth/>}/>
+                  <Route path="/properties" element={<Properties/>}/>
                   <Route path="/properties/:propertyId" element={<PropertyInfoPage/>}/>
+                  <Route path="/addingAProperty" element={isAuthenticated ? <PostProperty/> : <ErrorMessageAuth/>}/>
                   <Route path="/matching" element={<PropertyMatching/>}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/register" element={<Register/>}/>
