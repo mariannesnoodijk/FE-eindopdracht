@@ -37,10 +37,7 @@ function AuthContextProvider({children}) {
     async function login(token) {
         localStorage.setItem('token', token);
         const userInfo = jwtDecode(token);
-        console.log(userInfo)
-        // const userId = userInfo.sub;
         const accountId = userInfo.accountId
-        // localStorage.setItem('id', userInfo.accountId)
 
         try {
             const response = await axios.get(`http://localhost:8080/accounts/${accountId}`, {
@@ -49,7 +46,6 @@ function AuthContextProvider({children}) {
                     Authorization: `${token}`,
                 }
             });
-            console.log('response', response);
 
             toggleIsAuth({
                 isAuthenticated: true,
@@ -70,16 +66,8 @@ function AuthContextProvider({children}) {
                 status: 'done',
             })
         }
-
-
-        // TODO: wat betekent onderstaande ook al weer met pending? Wat doe je ermee?
-        // toggleIsAuth({
-        //     isAuthenticated: true,
-        //     user: null,
-        //     status: 'pending',
-        //     token: token,
-        // })
     }
+
     function logout() {
         toggleIsAuth({
             isAuthenticated: false,
