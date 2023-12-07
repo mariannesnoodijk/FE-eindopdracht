@@ -28,16 +28,11 @@ function ScheduleViewing() {
         e.preventDefault();
         toggleError(false);
 
-        console.log({
-            ...formState
-        });
-
         try {
             const response = await axios.post('http://localhost:8080/viewings', {
                 ...formState
             });
-            console.log(response.data);
-            setSubmitSuccessId(response.data.id);
+            setSubmitSuccessful(response.data.id);
         } catch (e) {
             console.error(e);
             toggleError(true);
@@ -55,18 +50,7 @@ function ScheduleViewing() {
 
                     {!submitSuccessful ?
                         <form className="general-form" onSubmit={handleSubmit}>
-                            {/*<div className="general-form__right-side">*/}
-                            {/*</div>*/}
                             <div className="general-form__left-side">
-                            {/*<Input*/}
-                            {/*    type="number"*/}
-                            {/*    name="accountId"*/}
-                            {/*    labelText="What is your account id?"*/}
-                            {/*    placeholder="Please type your account id here..."*/}
-                            {/*    required={true}*/}
-                            {/*    formStateValue={formState.accountId}*/}
-                            {/*    handleChange={handleChange}*/}
-                            {/*/>*/}
                             <Input
                                 type="text"
                                 name="fullname"
