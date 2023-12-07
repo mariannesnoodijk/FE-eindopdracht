@@ -8,7 +8,6 @@ import {AuthContext} from "../../context/AuthContext.jsx";
 
 function PropertyDetail() {
     const [error, toggleError] = useState(false);
-    const [loading, toggleLoading] = useState(false);
     const [property, setProperty] = useState([]);
     const [deleteThisProperty, setDeleteThisProperty] = useState('');
     const [showConfirmation, toggleShowConfirmation] = useState(false);
@@ -16,7 +15,7 @@ function PropertyDetail() {
 
     const navigate = useNavigate();
 
-    const {propertyId} = useParams(); // pakt wat achter de / wordt gezet in de url
+    const {propertyId} = useParams();
 
 
     useEffect(() => {
@@ -25,11 +24,9 @@ function PropertyDetail() {
 
     async function fetchPropertyInfo() {
         toggleError(false);
-        // toggleLoading(true);
 
         try {
             const response = await axios.get(`http://localhost:8080/properties/${propertyId}`);
-            console.log(response.data);
             setProperty(response.data);
         } catch (e) {
             console.error(e);
@@ -47,7 +44,6 @@ function PropertyDetail() {
                 }
             });
             setDeleteThisProperty(response.data);
-            console.log('This property is now deleted')
             toggleShowConfirmation(true);
         } catch (e) {
             console.error(e);
