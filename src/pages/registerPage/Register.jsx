@@ -31,18 +31,12 @@
             e.preventDefault();
             toggleError(false);
 
-            console.log('form', {
-                ...formState
-            });
-
             try {
                 const response = await axios.post('http://localhost:8080/accounts', {
                     ...formState
                 });
-                console.log('test response', response.data);
                 navigate('/login')
 
-                console.log(response.data.accountId);
                 localStorage.setItem('id', response.data.accountId)
             } catch (e) {
                 console.error(e);
