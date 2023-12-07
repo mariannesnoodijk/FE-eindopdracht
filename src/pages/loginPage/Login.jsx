@@ -3,7 +3,6 @@ import axios from "axios";
 import Input from "../../components/forms input/Input.jsx";
 import {Link} from "react-router-dom";
 import Button from "../../components/button/Button.jsx";
-import {useNavigate} from "react-router-dom"
 import InteriorImage from "../../assets/img/interior_1.jpg";
 import {AuthContext} from "../../context/AuthContext.jsx";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
@@ -14,11 +13,8 @@ function Login() {
         password: '',
     });
     const [submitSuccessful, setSubmitSuccessful] = useState(null);
-    const [loading, toggleLoading] = useState(false);
     const [error, toggleError] = useState(false);
     const {login} = useContext(AuthContext);
-
-    const navigate = useNavigate();
 
     function handleChange(e) {
         setFormState({
@@ -74,8 +70,9 @@ function Login() {
                                     handleChange={handleChange}
                                 />
                                 <div className="general-form__button">
-                                    <Button type="submit"
-                                            variant="primary">login</Button>
+                                    <Button
+                                        type="submit"
+                                        variant="primary">login</Button>
                                 </div>
                                 <div className="sub-message">
                                     <p>Are you new on this page? <Link className="sub-message__links" to="/register">Register
