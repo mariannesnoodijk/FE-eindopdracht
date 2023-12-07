@@ -7,9 +7,8 @@ import axios from "axios";
 import {AuthContext} from "../../context/AuthContext.jsx";
 import ErrorMessage from "../errorMessage/ErrorMessage.jsx";
 
-function PropertyCard({ image, title, price, description, propertyId }) {
+function PropertyCard({ title, price, description, propertyId }) {
     const [error, toggleError] = useState(false);
-    const [property, setProperty] = useState();
     const [showConfirmation, toggleShowConfirmation] = useState(false);
     const navigate = useNavigate();
     const {role} = useContext(AuthContext);
