@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import Button from "../../components/button/Button.jsx";
 import axios from "axios";
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import "./Profile.css";
 import {AuthContext} from "../../context/AuthContext.jsx";
 import AccountsInfoItem from "../../components/accountsInfoItem/AccountsInfoItem.jsx";
@@ -9,8 +9,6 @@ import ErrorMessage from "../../components/errorMessage/ErrorMessage.jsx";
 
 function Profile() {
     const [error, toggleError] = useState(false);
-    const [loading, toggleLoading] = useState(false);
-    const [formState, setFormState] = useState('');
     const [profileData, setProfileData] = useState({});
     const [deleteData, setDeleteData] = useState('');
     const [showConfirmation, toggleShowConfirmation] = useState(false);
