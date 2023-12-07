@@ -28,7 +28,6 @@ function PostImage() {
                     "Content-Type": "multipart/form-data",
                 }
             });
-            console.log(response.data)
         } catch (e) {
             console.error(e);
             console.error("Error status:", e.response.status);
