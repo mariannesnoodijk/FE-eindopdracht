@@ -14,24 +14,12 @@ function Properties() {
     }, []); // Fetch propertiesPage when the component mounts
 
 
-    // const handleFavoriteToggle = async (propertyId, isFavorite) => {
-    //     try {
-    //         const response = await axios.patch(`http://localhost:8080/properties/${propertyId}/favorite`, isFavorite);
-    //         console.log(response.data); // Updated property object with favorite status
-    //         fetchProperties(); // Fetch updated propertiesPage after favorite status change
-    //     } catch (error) {
-    //         console.pageNotFound(error);
-    //     }
-    // };
-
-
     async function fetchProperties() {
         toggleError(false);
         toggleLoading(true);
 
         try {
             const response = await axios.get('http://localhost:8080/properties');
-            console.log(response.data);
             setProperties(response.data);
         } catch (e) {
             console.error(e);
